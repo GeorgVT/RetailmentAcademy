@@ -1,0 +1,57 @@
+﻿@startsalt
+{
+  Это просто тект
+  [А это - кнопарь]
+  ()  Невыбранный батон
+  (X) Выбранный батон
+  []  Нет птички
+  [X] Есть птичка
+  "Напечатайте сюды    "
+  ^Это поле с педалью^
+}
+@endsalt
+
+@startsalt
+
+{+
+    !include wf_mainmenu.iuml
+    {/ <b>План-факт по группам</b> | План-факт по брендам | Распределение бюджета }
+    .
+    !define WF_TABLE_FILE wf_table1.iuml
+    !define SHOW_TSVETOMODEL
+
+    !include wf_filter1.iuml
+    .
+    !include wf_accordeon.iuml
+}
+@endsalt
+
+@startsalt
+{+
+    !include wf_mainmenu.iuml
+    {/ План-факт по группам | <b>План-факт по брендам</b> | Распределение бюджета }
+    .
+    !define WF_TABLE_FILE wf_table2.iuml
+    !define SHOW_TSVETOMODEL
+
+    !include wf_filter2.iuml
+    .
+    !include wf_accordeon.iuml
+}
+@endsalt
+
+@startsalt
+{+
+    !include wf_mainmenu.iuml
+    {/ План-факт по группам | План-факт по брендам | <b>Распределение бюджета<b> }
+    .
+    !define WF_TABLE_FILE wf_table3.iuml
+    !define BUDGET_DISTRIBUTION
+    !undef SHOW_TSVETOMODEL
+
+    !include wf_filter3.iuml
+    .
+    !include wf_accordeon.iuml
+}
+
+@endsalt

@@ -1,0 +1,50 @@
+﻿@startuml
+
+Class01 "1" *-- "*" Class02 : содержит
+
+Class03 o-- Class04 : перечисляет
+
+Class05 --> "1" Class06 : ассоциирует
+
+Класс07 --|> Класс08 : расширяет\n(наследует)
+
+@enduml
+
+@startuml
+
+Class KlassifikatorRazdelov
+
+Class KlassifikatorNaimenovaniy
+
+Class TorgovyeMarki
+
+Class Sezony
+
+Class Budjety {
+    Sezony pSezon
+}
+
+Class StrokaBudjeta {
+    Budjety pBudjet
+    KlassifikatorNaimenovaniy pNaimenovanie
+    int 
+}
+
+Class Zakazy {
+    Sezony pSezon
+    TorgovyeMarki pTorgovayaMarka
+}
+
+Class StrokaZakaza {
+    Zakazy pZakaz
+}
+
+Annotation ДинамическиеКлассификаторы
+
+Annotation Принадлежность
+
+Annotation ПоказателиЗаказов
+
+Annotation Цветомодели
+
+@enduml

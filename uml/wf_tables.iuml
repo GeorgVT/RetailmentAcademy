@@ -1,0 +1,9 @@
+﻿{
+    [ Экспорт в Excel ]
+    .
+    !include WF_TABLE_FILE
+    !ifdef SHOW_TSVETOMODEL
+    .
+    !include wf_table_tsvetomodel.iuml
+    !endif
+}
