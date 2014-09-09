@@ -1,4 +1,5 @@
 ﻿
+
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
@@ -6,37 +7,36 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var documentEvent = {};	// @document
 // @endregion// @endlock
 
+
 // eventHandlers// @lock
 
 	loginBar.logout = function loginBar_logout (event)// @startlock
 	{// @endlock
-		vUser = WAF.directory.currentUser();
-		if(vUser == null) {
-			$$('testContainer').setBackgroundColor("red");
-			this.showLoginDialog();
-		}
+		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
+		if(WAF.directory.currentUser() == null) this.showLoginDialog();
 
 	};// @lock
 
 	loginBar.login = function loginBar_login (event)// @startlock
 	{// @endlock
-		vUser = WAF.directory.currentUser();
-		if(vUser != null) {
-			$$('testContainer').setBackgroundColor("blue")
-		}
+		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
 
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		vUser = WAF.directory.currentUser();
-		if(vUser == null) {
-			$$('testContainer').setBackgroundColor("red")
-			$$('loginBar').showLoginDialog();
-		} else {
-			$$('testContainer').setBackgroundColor("blue")
-		}
+		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
+
 	};// @lock
+
+// @region customWidgetFunctions
+	WAF.widget.Container.prototype.displayLoggedinStatus = function(isLoggedIn) {
+		if(this.id == 'testContainer')
+			if (isLoggedIn) this.setBackgroundColor("blue")
+			else this.setBackgroundColor("red");
+		}
+	};
+// @endregion
 
 // @region eventManager// @startlock
 	WAF.addListener("loginBar", "logout", loginBar.logout, "WAF");
