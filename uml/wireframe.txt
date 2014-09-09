@@ -23,6 +23,8 @@
     !include wf_filter1.iuml
     .
     !include wf_accordeon.iuml
+    .
+    !include wf_logged_in.txt
 }
 @endsalt
 
@@ -37,6 +39,8 @@
     !include wf_filter2.iuml
     .
     !include wf_accordeon.iuml
+    .
+    !include wf_logged_in.txt
 }
 @endsalt
 
@@ -52,6 +56,8 @@
     !include wf_filter3.iuml
     .
     !include wf_accordeon.iuml
+    .
+    !include wf_logged_in.txt
 }
 
 @endsalt
