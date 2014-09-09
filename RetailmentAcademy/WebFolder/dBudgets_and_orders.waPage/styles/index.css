@@ -19,7 +19,7 @@
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
-	 right: 642px;
+	 right: 0px;
 	
 	 position: absolute;
 	 
@@ -31,17 +31,6 @@
 	 top: 42px;
 	 left: 0px;
 	 right: 723px;
-	
-	 position: absolute;
-	 
-}
-
-#login1 {
-	 z-index: 5;
-	 height: 20px;
-	 bottom: 3px;
-	 left: 0px;
-	 right: 0px;
 	
 	 position: absolute;
 	 
@@ -151,10 +140,21 @@
 	 height: 211px;
 	 top: 60px;
 	 left: 0px;
-	 right: 0px;
+	 right: 338px;
 	
 	 position: absolute;
 	 background-color: rgb(0, 127, 255);
+	 
+}
+
+#loginBar {
+	 z-index: 5;
+	 height: 20px;
+	 bottom: 3px;
+	 left: 0px;
+	 right: 338px;
+	
+	 position: absolute;
 	 
 }
 
