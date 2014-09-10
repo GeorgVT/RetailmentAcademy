@@ -1,4 +1,6 @@
 ﻿
+var cUser, 
+	cUserGroups = {};
 
 WAF.onAfterInit = function onAfterInit() {// @lock
 
@@ -7,26 +9,30 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var documentEvent = {};	// @document
 // @endregion// @endlock
 
+	cUser = WAF.directory.currentUser();
 
 // eventHandlers// @lock
 
 	loginBar.logout = function loginBar_logout (event)// @startlock
 	{// @endlock
-		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
-		if(WAF.directory.currentUser() == null) this.showLoginDialog();
+		cUser = WAF.directory.currentUser();
+		$$('testContainer').displayLoggedinStatus(cUser != null);
+		if(cUser == null) this.showLoginDialog();
 
 	};// @lock
 
 	loginBar.login = function loginBar_login (event)// @startlock
 	{// @endlock
-		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
+		cUser = WAF.directory.currentUser();
+		$$('testContainer').displayLoggedinStatus(cUser != null);
 
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
-		if(WAF.directory.currentUser() == null) $$('loginBar').showLoginDialog();
+		cUser = WAF.directory.currentUser();
+		$$('testContainer').displayLoggedinStatus(cUser != null);
+		if(cUser == null) $$('loginBar').showLoginDialog();
 	};// @lock
 
 // @region customWidgetFunctions
