@@ -26,7 +26,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		$$('testContainer').displayLoggedinStatus(WAF.directory.currentUser() != null);
-
+		if(WAF.directory.currentUser() == null) $$('loginBar').showLoginDialog();
 	};// @lock
 
 // @region customWidgetFunctions
