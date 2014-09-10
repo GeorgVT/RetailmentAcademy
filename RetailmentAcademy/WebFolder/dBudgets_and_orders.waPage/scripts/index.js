@@ -1,6 +1,6 @@
 ﻿
-var cUser, 
-	cUserGroups = {};
+var cUser = {}; 
+var cUserGroups = {};
 
 WAF.onAfterInit = function onAfterInit() {// @lock
 
@@ -16,7 +16,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	loginBar.logout = function loginBar_logout (event)// @startlock
 	{// @endlock
 		cUser = WAF.directory.currentUser();
-		$$('testContainer').displayLoggedinStatus(cUser != null);
+		$$('testContainer').onLoggedStatusChanged(cUser != null);
 		if(cUser == null) this.showLoginDialog();
 
 	};// @lock
@@ -24,22 +24,29 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	loginBar.login = function loginBar_login (event)// @startlock
 	{// @endlock
 		cUser = WAF.directory.currentUser();
-		$$('testContainer').displayLoggedinStatus(cUser != null);
+		
+		//Let's reload current page
+		if (cUser != null) {
+			var strTemp = window.location;
+			window.location = strTemp;
+		}
 
+		//Let's process logged in status change
+		$$('testContainer').onLoggedStatusChanged(cUser != null);
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		cUser = WAF.directory.currentUser();
-		$$('testContainer').displayLoggedinStatus(cUser != null);
+		$$('testContainer').onLoggedStatusChanged(cUser != null);
 		if(cUser == null) $$('loginBar').showLoginDialog();
 	};// @lock
 
 // @region customWidgetFunctions
-	WAF.widget.Container.prototype.displayLoggedinStatus = function(isLoggedIn) {
+	WAF.widget.Container.prototype.onLoggedStatusChanged = function(isLoggedIn) {
 		if(this.id == 'testContainer') {
-			if (isLoggedIn) this.setBackgroundColor("blue")
-			else this.setBackgroundColor("red");
+			if (! isLoggedIn) this.destroy();
+//			else this.rebuild();
 		}
 	};
 // @endregion
