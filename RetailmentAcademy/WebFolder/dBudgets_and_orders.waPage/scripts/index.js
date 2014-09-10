@@ -31,7 +31,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region customWidgetFunctions
 	WAF.widget.Container.prototype.displayLoggedinStatus = function(isLoggedIn) {
-		if(this.id == 'testContainer')
+		if(this.id == 'testContainer') {
 			if (isLoggedIn) this.setBackgroundColor("blue")
 			else this.setBackgroundColor("red");
 		}
