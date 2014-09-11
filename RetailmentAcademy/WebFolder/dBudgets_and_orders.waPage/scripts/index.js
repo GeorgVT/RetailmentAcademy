@@ -16,7 +16,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	loginBar.logout = function loginBar_logout (event)// @startlock
 	{// @endlock
 		cUser = WAF.directory.currentUser();
-		$$('testContainer').onLoggedStatusChanged(cUser != null);
+//		$$('testContainer').onLoggedStatusChanged(cUser != null);
+		this.onLoggedStatusChanged(cUser != null);
 		if(cUser == null) this.showLoginDialog();
 
 	};// @lock
@@ -32,21 +33,23 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		}
 
 		//Let's process logged in status change
-		$$('testContainer').onLoggedStatusChanged(cUser != null);
+		this.onLoggedStatusChanged(cUser != null);
+
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		cUser = WAF.directory.currentUser();
-		$$('testContainer').onLoggedStatusChanged(cUser != null);
+//		$$('testContainer').onLoggedStatusChanged(cUser != null);
+		$$('loginBar').onLoggedStatusChanged(cUser != null);
 		if(cUser == null) $$('loginBar').showLoginDialog();
 	};// @lock
 
 // @region customWidgetFunctions
-	WAF.widget.Container.prototype.onLoggedStatusChanged = function(isLoggedIn) {
-		if(this.id == 'testContainer') {
-			if (! isLoggedIn) this.destroy();
-//			else this.rebuild();
+	WAF.widget.Login.prototype.onLoggedStatusChanged = function(isLoggedIn) {
+		if (! isLoggedIn) {
+			$$('testContainer').destroy();
+			$$('mainMenuBar').destroy();
 		}
 	};
 // @endregion
