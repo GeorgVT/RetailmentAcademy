@@ -3,6 +3,105 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#richText16 {
+	 z-index: 1;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem16 {
+	 z-index: 4;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText15 {
+	 z-index: 1;
+	 width: 149px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem15 {
+	 z-index: 3;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText14 {
+	 z-index: 1;
+	 width: 149px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem14 {
+	 z-index: 2;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText13 {
+	 z-index: 1;
+	 width: 149px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem13 {
+	 z-index: 1;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuBar1 {
+	 z-index: 8;
+	 height: 20px;
+	 top: 20px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #menuItem1 {
 	 z-index: 10;
 	 width: 110px;
