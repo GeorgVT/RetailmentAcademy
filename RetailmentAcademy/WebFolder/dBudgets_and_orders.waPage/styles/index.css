@@ -3,10 +3,10 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#richText16 {
+#richText10 {
 	 z-index: 1;
-	 width: 150px;
-	 height: 18px;
+	 width: 145px;
+	 height: 22px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -14,8 +14,227 @@
 	 
 }
 
-#menuItem16 {
+#richText9 {
+	 z-index: 1;
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuBar4 {
+	 z-index: 2;
+	 width: 149px;
+	 height: 46px;
+	 top: 18px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText8 {
+	 z-index: 1;
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText6 {
+	 z-index: 1;
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuBar3 {
+	 z-index: 2;
+	 width: 149px;
+	 height: 46px;
+	 top: 18px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText5 {
+	 z-index: 1;
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText4 {
+	 z-index: 1;
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuBar1 {
+	 z-index: 2;
+	 width: 149px;
+	 height: 46px;
+	 top: 18px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#container3 {
+	 z-index: 6;
+	 top: 28px;
+	 bottom: 3px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 
+}
+
+#richText3 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem3 {
+	 z-index: 3;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#container2 {
+	 z-index: 5;
+	 top: 28px;
+	 bottom: 3px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 
+}
+
+#richText2 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem2 {
+	 z-index: 2;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#container1 {
 	 z-index: 4;
+	 top: 28px;
+	 bottom: 3px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 
+}
+
+#richText1 {
+	 z-index: 1;
+	 width: 64px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItem1 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuBar2 > .waf-menuItem {
+	 margin-bottom: 0px;
+	 
+}
+
+#menuBar2 > .waf-menuItem:not(.waf-menuItem-last) {
+	 margin-right: 5px;
+	 
+}
+
+#menuBar2 {
+	 z-index: 3;
+	 height: 23px;
+	 top: 5px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 
+}
+
+#tabView1 {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: -2px;
+	
+	 position: absolute;
+	 
+}
+
+#richText16 {
+	 z-index: 1;
 	 width: 150px;
 	 height: 18px;
 	 top: 0px;
@@ -36,31 +255,9 @@
 	 
 }
 
-#menuItem15 {
-	 z-index: 3;
-	 width: 150px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
-}
-
 #richText14 {
 	 z-index: 1;
 	 width: 149px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#menuItem14 {
-	 z-index: 2;
-	 width: 150px;
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -80,7 +277,29 @@
 	 
 }
 
-#menuItem13 {
+#loginBar {
+	 z-index: 10;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	 right: 33px;
+	
+	 position: absolute;
+	 
+}
+
+#mainMenuBar {
+	 z-index: 8;
+	 height: 20px;
+	 top: 20px;
+	 left: 0px;
+	 right: 33px;
+	
+	 position: absolute;
+	 
+}
+
+#menuBudgetyIZakazy {
 	 z-index: 1;
 	 width: 150px;
 	 height: 18px;
@@ -91,115 +310,112 @@
 	 
 }
 
-#menuBar1 {
-	 z-index: 8;
-	 height: 20px;
-	 top: 20px;
+#menuOtchety {
+	 z-index: 2;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
 	 left: 0px;
-	 right: 0px;
 	
 	 position: absolute;
 	 
 }
 
-#menuItem1 {
-	 z-index: 10;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#richText1 {
-	 z-index: 9;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#menuItem2 {
-	 z-index: 8;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#richText2 {
-	 z-index: 7;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#menuItem3 {
-	 z-index: 6;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#richText3 {
-	 z-index: 5;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#menuItem4 {
-	 z-index: 4;
-	 width: 110px;
-	 height: 18px;
-	 top: 0px;
-	 left: 0px;
-	
-	 
-}
-
-#richText4 {
+#menuKlassifikatory {
 	 z-index: 3;
-	 width: 110px;
+	 width: 150px;
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
 	
+	 position: absolute;
 	 
 }
 
-#testContainer {
+#menuRoliVSysteme {
+	 z-index: 4;
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#mainContainer {
 	 z-index: 5;
 	 top: 40px;
 	 bottom: 0px;
 	 left: 0px;
-	 right: 0px;
+	 right: 33px;
 	
 	 position: absolute;
-	 background-color: rgb(170, 255, 86);
+	 background-color: transparent;
 	 
 }
 
-#loginBar {
-	 z-index: 10;
-	 height: 20px;
+#menuItemBudgety {
+	 z-index: 1;
+	 width: 145px;
+	 height: 22px;
 	 top: 0px;
 	 left: 0px;
-	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItemZakazy {
+	 z-index: 2;
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItemPlanFact {
+	 z-index: 1;
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItemRaspredelenieBudgeta {
+	 z-index: 3;
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItemStaticheskiyKlassifikator {
+	 z-index: 1;
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItemValuty {
+	 z-index: 2;
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
 	
 	 position: absolute;
 	 
