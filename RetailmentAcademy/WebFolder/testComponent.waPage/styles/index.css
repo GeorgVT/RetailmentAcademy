@@ -5,12 +5,13 @@
 
 #mainComponent {
 	 z-index: 1;
-	 top: 0px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
+	 top: 2px;
+	 bottom: 2px;
+	 left: 2px;
+	 right: 2px;
 	
 	 position: absolute;
+	 background-color: rgb(170, 255, 255);
 	 
 }
 
