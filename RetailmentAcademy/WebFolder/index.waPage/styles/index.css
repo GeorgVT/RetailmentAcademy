@@ -3,6 +3,270 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#richText16 {
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuRoliVSysteme {
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 4;
+	 
+}
+
+#richText10 {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItemValuty {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText9 {
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItemStaticheskiyKlassifikator {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuBar4 {
+	 width: 149px;
+	 height: 46px;
+	 top: 18px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText15 {
+	 width: 149px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuKlassifikatory {
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 3;
+	 
+}
+
+#richText8 {
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItemRaspredelenieBudgeta {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText6 {
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItemPlanFact {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuBar3 {
+	 width: 149px;
+	 height: 46px;
+	 top: 18px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText14 {
+	 width: 149px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuOtchety {
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText5 {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItemZakazy {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText4 {
+	 width: 145px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItemBudgety {
+	 width: 145px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuBar1 {
+	 width: 149px;
+	 height: 46px;
+	 top: 18px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText13 {
+	 width: 149px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuBudgetyIZakazy {
+	 width: 150px;
+	 height: 18px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#mainMenuBar {
+	 height: 20px;
+	 top: 20px;
+	 left: 2px;
+	 right: 2px;
+	
+	 position: absolute;
+	 z-index: 8;
+	 
+}
+
 #loginBar {
 	 height: 20px;
 	 top: 0px;
@@ -10,7 +274,7 @@
 	 right: 2px;
 	
 	 position: absolute;
-	 z-index: 10;
+	 z-index: 9;
 	 
 }
 
