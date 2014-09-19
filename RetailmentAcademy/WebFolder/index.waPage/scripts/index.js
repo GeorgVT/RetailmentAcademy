@@ -124,8 +124,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.widget.MenuBar.prototype.onLoggedStatusChanged = function(isLoggedIn) {
 		if(this.id == 'mainMenuBar') {
 			if (! isLoggedIn) {
-//				$$('mainContainer').onLoggedStatusChanged(cUser != null);
-//				$$('mainContainer').destroy();
+				$$('mainContainer').onLoggedStatusChanged(cUser != null);
+				$$('mainContainer').destroy();
 			} else {
 				//??Initialize main menu items visibility based on user's groups
 			}
@@ -148,6 +148,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @endregion
 
+// @region customContainerWidgetFunctions
+
+	WAF.widget.Container.prototype.onLoggedStatusChanged = function(isLoggedIn) {
+		if(this.id == 'mainContainer') {
+			if (isLoggedIn) {
+				//??Initialize tabs visibility based on main menu items availability
+			}
+		}
+	};
+
+// @endregion
 
 // @region eventManager// @startlock
 	WAF.addListener("menuItemValuty", "click", menuItemValuty.click, "WAF");

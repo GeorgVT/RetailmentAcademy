@@ -3,6 +3,105 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#container2 {
+	 top: 28px;
+	 bottom: 5px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 z-index: 3;
+	 
+}
+
+#container1 {
+	 top: 28px;
+	 bottom: 5px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText2 {
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItem2 {
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 2;
+	 
+}
+
+#richText1 {
+	 width: 64px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuItem1 {
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuBar2 {
+	 height: 23px;
+	 top: 5px;
+	 left: 5px;
+	 right: 5px;
+	
+	 position: absolute;
+	 z-index: 1;
+	 
+}
+
+#menuBar2 > .waf-menuItem:not(.waf-menuItem-last) {
+	 margin-right: 5px;
+	 
+}
+
+#menuBar2 > .waf-menuItem {
+	 margin-bottom: 0px;
+	 
+}
+
+#mainContainer {
+	 top: 40px;
+	 bottom: 0px;
+	 left: 2px;
+	 right: 2px;
+	
+	 position: absolute;
+	 background-color: transparent;
+	 z-index: 5;
+	 
+}
+
 #richText16 {
 	 width: 150px;
 	 height: 18px;
@@ -263,7 +362,7 @@
 	 right: 2px;
 	
 	 position: absolute;
-	 z-index: 8;
+	 z-index: 7;
 	 
 }
 
@@ -274,7 +373,18 @@
 	 right: 2px;
 	
 	 position: absolute;
-	 z-index: 9;
+	 z-index: 8;
+	 
+}
+
+#mainTabView {
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 z-index: 4;
 	 
 }
 
