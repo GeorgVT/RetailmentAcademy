@@ -15,7 +15,7 @@
 
 {+
     !include wf_mainmenu.iuml
-    {/ <b>План-факт по группам</b> | План-факт по брендам | Распределение бюджета }
+    {/ <b>План-факт</b> | Распределение бюджета } | * | * | *
     .
     !define WF_TABLE_FILE wf_table1.iuml
     !define SHOW_TSVETOMODEL
@@ -31,7 +31,7 @@
 @startsalt
 {+
     !include wf_mainmenu.iuml
-    {/ План-факт по группам | <b>План-факт по брендам</b> | Распределение бюджета }
+    {/ План-факт по группам | <b>План-факт по брендам</b> | Распределение бюджета } | * | * | *
     .
     !define WF_TABLE_FILE wf_table2.iuml
     !define SHOW_TSVETOMODEL
@@ -47,7 +47,7 @@
 @startsalt
 {+
     !include wf_mainmenu.iuml
-    {/ План-факт по группам | План-факт по брендам | <b>Распределение бюджета<b> }
+    {/ План-факт | <b>Распределение бюджета</b> } | * | * | *
     .
     !define WF_TABLE_FILE wf_table3.iuml
     !define BUDGET_DISTRIBUTION
