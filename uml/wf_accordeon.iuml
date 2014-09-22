@@ -1,30 +1,28 @@
-﻿{
-    --
+﻿    -- | * | * | *
     !ifndef BUDGET_DISTRIBUTION
-        <&chevron-bottom> <i><b>Диаграммы распределения бюджета и фактических заказов</b></i>
+        <&chevron-bottom> <i><b>Диаграммы распределения бюджета и фактических заказов</b></i> | * | * | *
     !else
-        <&chevron-bottom> <i><b>Диаграммы распределения бюджета</b></i>
+        <&chevron-bottom> <i><b>Диаграммы распределения бюджета</b></i> | * | * | *
     !endif
-    --
+    -- | * | * | *
     !include wf_diagram.iuml
-    --
+    -- | * | * | *
     !ifndef BUDGET_DISTRIBUTION
-        <&chevron-bottom> <i><b>Сводные данные по бюджету и фактическим заказам</b></i>
+        <&chevron-bottom> <i><b>Сводные данные по бюджету и фактическим заказам</b></i> | * | * | *
     !else
-        <&chevron-bottom> <i><b>Сводные данные по распределению бюджета</b></i>
+        <&chevron-bottom> <i><b>Сводные данные по распределению бюджета</b></i> | * | * | *
     !endif
-    --
-    [ Экспорт данных в Excel ]
+    -- | * | * | *
+    . | . | [ Экспорт данных в Excel ] | *
     .
     !include WF_TABLE_FILE
 
     !ifdef SHOW_TSVETOMODEL
-    --
-    <&chevron-bottom> <i><b>Цветомодели по отобранным позициям</b></i>
-    --
-    [ Экспорт сводных данных в Excel ]
+    -- | * | * | *
+    <&chevron-bottom> <i><b>Цветомодели по отобранным позициям</b></i> | * | * | *
+    -- | * | * | *
+    . | . | [ Экспорт сводных данных в Excel ] | *
     .
     !include wf_table_tsvetomodel.iuml
     !endif
-    --
-}
+    -- | * | * | *
