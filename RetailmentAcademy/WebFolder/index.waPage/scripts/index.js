@@ -8,7 +8,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region namespaceDeclaration// @startlock
-	var strCurrentTabIdEvent = {};	// @dataSource
 	var tabItemValuty = {};	// @menuItem
 	var tabItemRoliVSysteme = {};	// @menuItem
 	var menuItemValuty = {};	// @menuItem
@@ -28,21 +27,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
-	strCurrentTabIdEvent.onAttributeChange = function strCurrentTabIdEvent_onAttributeChange (event)// @startlock
-	{// @endlock
-		$$('mainTabView').onTabChanged("" + strCurrentTabId);	//Let's prevent passing by reference
-	};// @lock
-
 	tabItemValuty.click = function tabItemValuty_click (event)// @startlock
 	{// @endlock
-		strCurrentTabId = this.id.substr( $$('mainTabView').strTabItemPrefix.length	);
-		sources.strCurrentTabId.sync();
+		$$('mainTabView').onTabChanged(
+										this.id.substr(	$$('mainTabView').strTabItemPrefix.length	)
+									);
 	};// @lock
 
 	tabItemRoliVSysteme.click = function tabItemRoliVSysteme_click (event)// @startlock
 	{// @endlock
-		strCurrentTabId = this.id.substr( $$('mainTabView').strTabItemPrefix.length	);
-		sources.strCurrentTabId.sync();
+		$$('mainTabView').onTabChanged(
+										this.id.substr(	$$('mainTabView').strTabItemPrefix.length	)
+									);
+
 	};// @lock
 
 	menuItemValuty.click = function menuItemValuty_click (event)// @startlock
@@ -148,7 +145,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	$$('mainMenuBar').visibilityControl = function mainMenuBar_visibilityControl() {
 		//??Initialize main menu items visibility on current user rights
 		
-		var siblingTerminalItemsIDs = {};
+		var siblingTerminalItemsIDs = ['RoliVSysteme'];
 		$$('mainContainer').visibilityControl(siblingTerminalItemsIDs);
 	}
 
@@ -184,33 +181,45 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};
 
 	$$('mainContainer').visibilityControl = function mainContainer_visibilityControl(siblingTerminalItemsIDs) {
-		//!!$$('tabItemRoliVSysteme').show();
+		var intCurrentTabPosition;
 		
-		if (0 < $$('mainTabView').countTabs()) {
-			$$('mainTabView').selectTab(2);
+		alert("1");
+		
+		for (var i = 0; i < siblingTerminalItemsIDs.length; i++) {
+			$$('tabItem' + siblingTerminalItemsIDs[i]).show();
+			$$('tabContainer' + siblingTerminalItemsIDs[i]).show();
+			alert("2");
 			
-			strCurrentTabId = ($$('mainTabView').getSelectedTab()).menuItem.id.substr(
-																				$$('mainTabView').strTabItemPrefix.length
-																				);
-			alert("Name: " + strCurrentTabId);
-			
-			sources.strCurrentTabId.sync();
-//			$$('mainTabView').onTabChanged(
-//							($$('mainTabView').getSelectedTab()).menuItem.id.substr(
-//																				$$('mainTabView').strTabItemPrefix.length
-//																				)
-//						);
+			if(siblingTerminalItemsIDs[i] === $$('mainTabView').strCurrentTabId) intCurrentTabPosition = i;
 		}
+
+		//If this is first invocation after page loaded or after mainMenu paragraph switching
+		if(($$('mainTabView').strCurrentTabId === "") || (typeof intCurrentTabPosition === 'undefined')) {
+			$$('mainTabView').selectTab(1);
+			intCurrentTabPosition = 0;
+		}
+		
+		$$('mainTabView').onTabChanged(
+						($$('mainTabView').getSelectedTab()).menuItem.id.substr(
+																			$$('mainTabView').strTabItemPrefix.length
+																			)
+				);
 	}
 // @endregion
 
 // @region customTabViewWidgetFunctions
 	$$('mainTabView').onTabChanged = function mainTabView_onTabChanged (strSelectedTabId) {
+
+//		alert("Selected="+strSelectedTabId);
+			
+		this.strCurrentTabId = "" + strSelectedTabId;
+		
 //		alert("Selected="+strSelectedTabId);
 		
+		//Let's load selected WebComponent for the first time since page load
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
-			//!!$$('tabContainer' + strSelectedTabId).show();
-			
+//			$$('tabContainer' + this.strSelectedTabId).show();
+
 			$$('tabComponent' + strSelectedTabId).loadComponent({
 				//?? userData: { strSelectedTabId: "" + strSelectedTabId },
 				onSuccess: function () {
@@ -220,7 +229,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 								//!!$$('tabContainer' + strSelectedTabId).show();
 								
 //								alert("Id = "+$$('mainTabView').getSelectedTab().container.id);
-								$$('mainTabView').getSelectedTab().container.show();
+//								$$('mainTabView').getSelectedTab().container.show();
 							}
 			});
 		}
@@ -228,13 +237,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region customTabViewWidgetProperties
+	$$('mainTabView').strCurrentTabId = "";
 	$$('mainTabView').timeTabLoaded =  {};
 	$$('mainTabView').strTabItemPrefix = "tabItem";
 
 // @endregion
 
 // @region eventManager// @startlock
-	WAF.addListener("strCurrentTabId", "onAttributeChange", strCurrentTabIdEvent.onAttributeChange, "WAF");
 	WAF.addListener("tabItemValuty", "click", tabItemValuty.click, "WAF");
 	WAF.addListener("tabItemRoliVSysteme", "click", tabItemRoliVSysteme.click, "WAF");
 	WAF.addListener("menuItemValuty", "click", menuItemValuty.click, "WAF");
