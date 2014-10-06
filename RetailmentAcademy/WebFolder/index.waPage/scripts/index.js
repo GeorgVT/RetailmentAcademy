@@ -3,7 +3,14 @@ var cUserGroups = {};
 
 WAF.onAfterInit = function onAfterInit() {// @lock
 
+// @region customNamespaceDeclaration
+	var mainTabView = {};	// @TabView
+// @endregion
+
 // @region namespaceDeclaration// @startlock
+	var strCurrentTabIdEvent = {};	// @dataSource
+	var tabItemValuty = {};	// @menuItem
+	var tabItemRoliVSysteme = {};	// @menuItem
 	var menuItemValuty = {};	// @menuItem
 	var menuItemStaticheskiyKlassifikator = {};	// @menuItem
 	var menuItemRaspredelenieBudgeta = {};	// @menuItem
@@ -20,6 +27,23 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	strCurrentTabIdEvent.onAttributeChange = function strCurrentTabIdEvent_onAttributeChange (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged("" + strCurrentTabId);	//Let's prevent passing by reference
+	};// @lock
+
+	tabItemValuty.click = function tabItemValuty_click (event)// @startlock
+	{// @endlock
+		strCurrentTabId = this.id.substr( $$('mainTabView').strTabItemPrefix.length	);
+		sources.strCurrentTabId.sync();
+	};// @lock
+
+	tabItemRoliVSysteme.click = function tabItemRoliVSysteme_click (event)// @startlock
+	{// @endlock
+		strCurrentTabId = this.id.substr( $$('mainTabView').strTabItemPrefix.length	);
+		sources.strCurrentTabId.sync();
+	};// @lock
 
 	menuItemValuty.click = function menuItemValuty_click (event)// @startlock
 	{// @endlock
@@ -79,6 +103,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		$$('loginBar').onLoggedStatusChanged();
+
 	};// @lock
 
 	loginBar.logout = function loginBar_logout (event)// @startlock
@@ -99,8 +124,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region customLoginWidgetFunctions
 
-	WAF.widget.Login.prototype.onLoggedStatusChanged = function() {
-		if(this.id == 'loginBar') {
+	$$('loginBar').onLoggedStatusChanged = function loginBar_onLoggedStatusChanged() {
+	
 			cUser = WAF.directory.currentUser();
 			
 			if (cUser != null) {
@@ -109,58 +134,109 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				//Let's process logged in status change
 				$$('mainMenuBar').onLoggedStatusChanged(cUser != null);
 			} else {
-				$$('mainMenuBar').onLoggedStatusChanged(cUser != null);
+				$$('mainMenuBar').onLoggedStatusChanged(false);
 				$$('mainMenuBar').destroy();
 				
 				this.showLoginDialog();
 			}
-		}
 	};
 
 // @endregion
 
 // @region customMenuBarWidgetFunctions
 
-	WAF.widget.MenuBar.prototype.onLoggedStatusChanged = function(isLoggedIn) {
-		if(this.id == 'mainMenuBar') {
-			if (! isLoggedIn) {
-				$$('mainContainer').onLoggedStatusChanged(cUser != null);
-				$$('mainContainer').destroy();
-			} else {
-				//??Initialize main menu items visibility based on user's groups
-			}
+	$$('mainMenuBar').visibilityControl = function mainMenuBar_visibilityControl() {
+		//??Initialize main menu items visibility on current user rights
+		
+		var siblingTerminalItemsIDs = {};
+		$$('mainContainer').visibilityControl(siblingTerminalItemsIDs);
+	}
+
+	$$('mainMenuBar').onLoggedStatusChanged = function mainMenuBar_onLoggedStatusChanged(isLoggedIn) {
+		if (! isLoggedIn) {
+			$$('mainContainer').onLoggedStatusChanged(false);
+			$$('mainContainer').destroy();
+		} else {
+			//Let's initialize main menu items visibility based on user's groups
+			this.visibilityControl();
 		}
 	};
 
-	WAF.widget.MenuBar.prototype.processEvents = function(event) {
+	$$('mainMenuBar').processEvents = function mainMenuBar_processEvents(event) {
 		
-		if(this.id == 'mainMenuBar') {
-			
-			//!!
-			alert("Event.type: " + event.type 
-								+ "\nTarget: "+event.currentTarget.id 
-								+ " (of kind: " + $$(event.currentTarget.id).kind + ")");
-			//if(event.Type == "click") alert("Target: "+event.target.id);
-			
-			return false;
-		}
+		//!!
+		alert("Event.type: " + event.type 
+							+ "\nTarget: "+event.currentTarget.id 
+							+ " (of kind: " + $$(event.currentTarget.id).kind + ")");
+		//if(event.Type == "click") alert("Target: "+event.target.id);
+		
+		return false;
 	};
 
 // @endregion
 
 // @region customContainerWidgetFunctions
 
-	WAF.widget.Container.prototype.onLoggedStatusChanged = function(isLoggedIn) {
-		if(this.id == 'mainContainer') {
-			if (isLoggedIn) {
-				//??Initialize tabs visibility based on main menu items availability
-			}
+	$$('mainContainer').onLoggedStatusChanged = function mainContainer_onLoggedStatusChanged(isLoggedIn) {
+		if (! isLoggedIn) {
+			//?? Do something for correct session close
 		}
 	};
+
+	$$('mainContainer').visibilityControl = function mainContainer_visibilityControl(siblingTerminalItemsIDs) {
+		//!!$$('tabItemRoliVSysteme').show();
+		
+		if (0 < $$('mainTabView').countTabs()) {
+			$$('mainTabView').selectTab(2);
+			
+			strCurrentTabId = ($$('mainTabView').getSelectedTab()).menuItem.id.substr(
+																				$$('mainTabView').strTabItemPrefix.length
+																				);
+			alert("Name: " + strCurrentTabId);
+			
+			sources.strCurrentTabId.sync();
+//			$$('mainTabView').onTabChanged(
+//							($$('mainTabView').getSelectedTab()).menuItem.id.substr(
+//																				$$('mainTabView').strTabItemPrefix.length
+//																				)
+//						);
+		}
+	}
+// @endregion
+
+// @region customTabViewWidgetFunctions
+	$$('mainTabView').onTabChanged = function mainTabView_onTabChanged (strSelectedTabId) {
+//		alert("Selected="+strSelectedTabId);
+		
+		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
+			//!!$$('tabContainer' + strSelectedTabId).show();
+			
+			$$('tabComponent' + strSelectedTabId).loadComponent({
+				//?? userData: { strSelectedTabId: "" + strSelectedTabId },
+				onSuccess: function () {
+								var dateD = new Date();
+								$$('mainTabView').timeTabLoaded[strSelectedTabId] = dateD.getTime();
+					
+								//!!$$('tabContainer' + strSelectedTabId).show();
+								
+//								alert("Id = "+$$('mainTabView').getSelectedTab().container.id);
+								$$('mainTabView').getSelectedTab().container.show();
+							}
+			});
+		}
+	};
+// @endregion
+
+// @region customTabViewWidgetProperties
+	$$('mainTabView').timeTabLoaded =  {};
+	$$('mainTabView').strTabItemPrefix = "tabItem";
 
 // @endregion
 
 // @region eventManager// @startlock
+	WAF.addListener("strCurrentTabId", "onAttributeChange", strCurrentTabIdEvent.onAttributeChange, "WAF");
+	WAF.addListener("tabItemValuty", "click", tabItemValuty.click, "WAF");
+	WAF.addListener("tabItemRoliVSysteme", "click", tabItemRoliVSysteme.click, "WAF");
 	WAF.addListener("menuItemValuty", "click", menuItemValuty.click, "WAF");
 	WAF.addListener("menuItemStaticheskiyKlassifikator", "click", menuItemStaticheskiyKlassifikator.click, "WAF");
 	WAF.addListener("menuItemRaspredelenieBudgeta", "click", menuItemRaspredelenieBudgeta.click, "WAF");
