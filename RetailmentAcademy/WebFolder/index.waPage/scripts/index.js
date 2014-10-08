@@ -140,13 +140,72 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @endregion
 
-// @region customMenuBarWidgetFunctions
+// @region customMenuBarWidgetFunctionsAndProperties
+
+	WAF.widget.MenuBar.prototype.arrChildIDPrefixes = ['menuItem', 'menu'];
+	
+	WAF.widget.MenuBar.prototype.getChildrenIDs = function mainMenuBar_getChildrenIDs(strLevelID) {
+		var arrChildrenIDs = [];
+
+		var arrChildren = typeof strLevelID === 'undefined' ? this.getChildren() : $$(""+strLevelID).getChildren() ;
+
+		for (var i = 0; i < arrChildren.length; i++) {
+			var strChildID = arrChildren[i].id;
+			
+			for (var iID = 0; iID < this.arrChildIDPrefixes.length; iID++) {
+				if(strChildID.substring(0, this.arrChildIDPrefixes[iID].length) === this.arrChildIDPrefixes[iID]) {
+					arrChildrenIDs.push(strChildID);
+					break;
+				}
+			}
+		}
+		return arrChildrenIDs;
+	}
+	
+	WAF.widget.MenuBar.prototype.isItemFinite = function MenuBar_isItemFinite (strItemID) {
+		return (this.getChildrenIDs(strItemID).length === 0);
+	}
+
+	WAF.widget.MenuBar.prototype.getSiblingFiniteItemIDs = function MenuBar_getSiblingFiniteItemIDs(strItemId) {
+		var arrFiniteSiblings = [];
+		var arrSiblings;
+		var strKind='';
+		
+		if (typeof strItemId === 'undefined' ) 
+			arrSiblings = this.getChildrenIDs();
+		else {
+			arrSiblings = this.getChildrenIDs(	$$(""+strItemId).getParent().id	) ;
+			strKind = $$(""+strItemId).kind;
+		}
+
+		for (var i = 0; i < arrSiblings.length; i++) 
+			if (this.isItemFinite(arrSiblings[i]))
+				if ((strKind === '') || (strKind === $$("" + arrSiblings[i]).kind)) 
+					arrFiniteSiblings.push( arrSiblings[i] );
+
+		return arrFiniteSiblings;
+	}
+
+	WAF.widget.MenuBar.prototype.stripChildIDsPrefixes = function MenuBar_stripChildIDsPrefix(siblingID) {
+		var strippedID = [];
+		if (typeof siblingID === 'string') {
+			for (var j = 0; j < this.arrChildIDPrefixes.length; j++) {
+
+				if(siblingID.substring(0, this.arrChildIDPrefixes[j].length) === this.arrChildIDPrefixes[j]) 
+						return siblingID.substring(this.arrChildIDPrefixes[j].length);
+			}
+			strippedID = "" + siblingID;
+			
+		}
+		else for (var i = 0; i < siblingID.length; i++) strippedID.push(this.stripChildIDsPrefixes(siblingID[i]));
+		
+		return strippedID;
+	}
 
 	$$('mainMenuBar').visibilityControl = function mainMenuBar_visibilityControl() {
 		//??Initialize main menu items visibility on current user rights
 		
-		var siblingTerminalItemsIDs = ['RoliVSysteme'];
-		$$('mainContainer').visibilityControl(siblingTerminalItemsIDs);
+		$$('mainContainer').visibilityControl(	this.getSiblingFiniteItemIDs()	);
 	}
 
 	$$('mainMenuBar').onLoggedStatusChanged = function mainMenuBar_onLoggedStatusChanged(isLoggedIn) {
@@ -162,11 +221,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	$$('mainMenuBar').processEvents = function mainMenuBar_processEvents(event) {
 		
 		//!!
-		alert("Event.type: " + event.type 
-							+ "\nTarget: "+event.currentTarget.id 
-							+ " (of kind: " + $$(event.currentTarget.id).kind + ")");
+//		alert("Event.type: " + event.type 
+//							+ "\nTarget: "+event.currentTarget.id 
+//							+ " (of kind: " + $$(event.currentTarget.id).kind + ")");
 		//if(event.Type == "click") alert("Target: "+event.target.id);
-		
+
+		//var siblingFiniteItemsIDs = this.getSiblingFiniteItems( event.currentTarget.id );
+		console.info(this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id )));
+
 		return false;
 	};
 
@@ -180,17 +242,17 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		}
 	};
 
-	$$('mainContainer').visibilityControl = function mainContainer_visibilityControl(siblingTerminalItemsIDs) {
+	$$('mainContainer').visibilityControl = function mainContainer_visibilityControl(newSiblingFiniteItemsIDs) {
 		var intCurrentTabPosition;
 		
 		alert("1");
 		
-		for (var i = 0; i < siblingTerminalItemsIDs.length; i++) {
-			$$('tabItem' + siblingTerminalItemsIDs[i]).show();
-			$$('tabContainer' + siblingTerminalItemsIDs[i]).show();
+		for (var i = 0; i < $$('mainTabView').siblingFiniteItemsIDs.length; i++) {
+			$$('tabItem' + $$('mainTabView').siblingFiniteItemsIDs[i]).show();
+			$$('tabContainer' + $$('mainTabView').siblingFiniteItemsIDs[i]).show();
 			alert("2");
 			
-			if(siblingTerminalItemsIDs[i] === $$('mainTabView').strCurrentTabId) intCurrentTabPosition = i;
+			if($$('mainTabView').siblingFiniteItemsIDs[i] === $$('mainTabView').strCurrentTabId) intCurrentTabPosition = i;
 		}
 
 		//If this is first invocation after page loaded or after mainMenu paragraph switching
@@ -239,7 +301,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @region customTabViewWidgetProperties
 	$$('mainTabView').strCurrentTabId = "";
 	$$('mainTabView').timeTabLoaded =  {};
+	$$('mainTabView').siblingFiniteItemsIDs = {};
 	$$('mainTabView').strTabItemPrefix = "tabItem";
+	$$('tabMenuBar').arrChildIDPrefixes = ['tabItem'];
 
 // @endregion
 
