@@ -173,9 +173,12 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		
 		if (typeof strItemId === 'undefined' ) 
 			arrSiblings = this.getChildrenIDs();
-		else {
+		else if ( this.isItemFinite(""+strItemId) ) {
 			arrSiblings = this.getChildrenIDs(	$$(""+strItemId).getParent().id	) ;
 			strKind = $$(""+strItemId).kind;
+		} else {
+			arrSiblings = this.getChildrenIDs(	(this.getChildrenIDs(""+strItemId))[0]	) ;
+			strKind = "";
 		}
 
 		for (var i = 0; i < arrSiblings.length; i++) 
@@ -227,7 +230,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//if(event.Type == "click") alert("Target: "+event.target.id);
 
 		//var siblingFiniteItemsIDs = this.getSiblingFiniteItems( event.currentTarget.id );
-		console.info(this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id )));
+//		if ( this.isItemFinite(event.currentTarget.id) ) 
+				console.info(this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id )));
 
 		return false;
 	};
