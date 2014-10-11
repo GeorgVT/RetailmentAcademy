@@ -356,14 +356,21 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Let's load selected WebComponent for the first time since page load
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
 
+			$$('tabComponent' + strSelectedTabId).rebuild();
+			console.dir($$('tabComponent' + strSelectedTabId));
+		
 			$$('tabComponent' + strSelectedTabId).loadComponent({
 						//?? userData: { strSelectedTabId: "" + strSelectedTabId },
-						onSuccess: function () {
+						onSuccess: function mainTabView_onComponentLoaded() {
 										var dateD = new Date();
 										$$('mainTabView').timeTabLoaded[strSelectedTabId] = dateD.getTime();
 									}
 					});
-		}
+		} else
+			console.info("current tab=%d, loaded on=%d"
+					, strSelectedTabId
+					, this.timeTabLoaded[strSelectedTabId]);
+		
 	};
 // @endregion
 
