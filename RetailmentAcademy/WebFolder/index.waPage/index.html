@@ -8,12 +8,15 @@
 		<meta name="WAF.catalog" content="Sezon"/>
 		<meta name="wakanda-version" content="8 build 8.162963"/>
 		<meta name="wakanda-build" content="8.162963"/>
-		<meta name="WAF.config.loadCSS" id="waf-interface-css" content="styles/index.css"/>
-		<meta name="WAF.config.loadCSS" id="waf-project-css" content="/application.css"/>
+		
+		
 <meta name="WAF.config.loadJS" id="waf-script" content="scripts/index.js"/>
 
 		<meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Sezon" data-lib="WAF" data-id="sezon" data-dataType="string" data-autoLoad="true" content="sezon"/>
-		</head>
+				<meta name="WAF.config.loadCSS" content="styles/index.css" id="waf-interface-css"/>
+		<meta name="WAF.config.loadCSS" content="/application.css" id="waf-project-css"/>
+		<meta name="WAF.config.loadCSS" content="styles/butify.css"/>
+</head>
 	<body id="waf-body" data-workspace-width="0" data-workspace-orientation="portrait" data-workspace-height="0" data-workspace-device="desktop" data-viewport-width="device-width" data-viewport-minimum-scale="1.0" data-viewport-maximum-scale="1.0" data-viewport-initial-scale="1.0" data-type="document" data-theme="default" data-rpc-validation="false" data-rpc-namespace="rpc" data-rpc-activate="false" data-platform="desktop" data-lib="WAF" data-group="[]" data-entire-model="false" data-apple-meta-tags-status-bar="default" style="bottom:;right:;visibility:hidden;">
 	<div id="loginBar" data-user-label="Логин: " data-user-display="Вход по имени: " data-type="login" data-password-label="Пароль: " data-no-user-display="Вход не выполнен" data-logout-action="Выход" data-login-title="Авторизация" data-login-button="Вход" data-login-action="Вход" data-lib="WAF" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-login"></div>
 		<ul id="mainMenuBar" data-type="menuBar" data-subMenuShow="hover" data-lib="WAF" data-level="0" data-display="horizontal" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" class="waf-widget waf-menuBar">
@@ -57,13 +60,13 @@
 		<div id="mainContainer" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-hideSplitter="false" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-container waf-container-level-0 waf-level-0">
  		<div id="mainTabView" data-type="tabView" data-padding="0" data-menu-position="top left" data-linked-tag="tabMenuBar,tabContainerRoliVSysteme,tabContainerValuty,tabContainerStaticheskiyKlassifikator" data-lib="WAF" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-tabView">
 	 	 	<ul id="tabMenuBar" data-type="menuBar" data-tab-margin="5" data-subMenuShow="hover" data-linked-tag="mainTabView" data-lib="WAF" data-level="0" data-display="horizontal" data-context="['protected']" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-constraint-bottom="false" class="waf-tabView-menuBar waf-tabView-menuBar-top-left waf-widget waf-menuBar">
-	 	 	 	<li id="tabItemRoliVSysteme" data-type="menuItem" data-text="Роли в системе" data-linked-tag="richText1,tabContainerRoliVSysteme" data-lib="WAF" data-hideonload="true" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
+	 	 	 	<li id="tabItemRoliVSysteme" data-type="menuItem" data-text="Роли в системе" data-linked-tag="richText1,tabContainerRoliVSysteme" data-lib="WAF" data-hideonload="true" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0 tabItemText">
 	 	 	 	 	<div id="richText1" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="tabItemRoliVSysteme" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText">Роли в системе</div>
  	 	 	 	</li>
-     	 	 	<li id="tabItemValuty" data-type="menuItem" data-text="Валюты" data-linked-tag="richText2,tabContainerValuty" data-lib="WAF" data-hideonload="true" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
+     	 	 	<li id="tabItemValuty" data-type="menuItem" data-text="Валюты" data-linked-tag="richText2,tabContainerValuty" data-lib="WAF" data-hideonload="true" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0 tabItemText">
 	 	 	 	 	<div id="richText2" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="tabItemValuty" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText">Валюты</div>
  	 	 	 	</li>
-                <li id="tabItemStaticheskiyKlassifikator" data-type="menuItem" data-text="Статический классификатор" data-linked-tag="richText3,tabContainerStaticheskiyKlassifikator" data-lib="WAF" data-hideonload="true" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0">
+                <li id="tabItemStaticheskiyKlassifikator" data-type="menuItem" data-text="Статический классификатор" data-linked-tag="richText3,tabContainerStaticheskiyKlassifikator" data-lib="WAF" data-hideonload="true" data-context="['protected','allowDrop','allowRemove']" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-menuItem waf-menuItem-level-0 waf-level-0 tabItemText">
 	 	 	 	 	<div id="richText3" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-linked-tag="tabItemStaticheskiyKlassifikator" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" data-autoWidth="false" class="waf-widget waf-richText">Статический классификатор</div>
  	 	 	 	</li>
  	 	 	</ul>

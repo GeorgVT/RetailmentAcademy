@@ -1,0 +1,16 @@
+﻿.tabItemText {
+     width: -webkit-max-content;
+     width: -moz-max-content;
+     width: max-content;
+     padding-left: 2px;
+     padding-right: 2px;
+}
+
+
+.tabItem {
+     width: -webkit-max-content;
+     width: -moz-max-content;
+     width: max-content;
+     max-width: 45%;
+	 
+}
