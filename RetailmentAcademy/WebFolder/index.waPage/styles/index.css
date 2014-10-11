@@ -3,6 +3,17 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#richText3 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #richText2 {
 	 z-index: 1;
 	 width: 66px;
@@ -409,6 +420,39 @@
 
 #tabMenuBar > .waf-menuItem {
 	 margin-bottom: 0px;
+	 
+}
+
+#tabItemStaticheskiyKlassifikator {
+	 z-index: 3;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabContainerStaticheskiyKlassifikator {
+	 z-index: 4;
+	 top: 23px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabComponentStaticheskiyKlassifikator {
+	 z-index: 6;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
 	 
 }
 

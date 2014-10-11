@@ -8,6 +8,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region namespaceDeclaration// @startlock
+	var tabItemStaticheskiyKlassifikator = {};	// @menuItem
 	var tabItemValuty = {};	// @menuItem
 	var tabItemRoliVSysteme = {};	// @menuItem
 	var menuItemValuty = {};	// @menuItem
@@ -27,17 +28,24 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	tabItemStaticheskiyKlassifikator.click = function tabItemStaticheskiyKlassifikator_click (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged(
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
+									);
+	};// @lock
+
 	tabItemValuty.click = function tabItemValuty_click (event)// @startlock
 	{// @endlock
 		$$('mainTabView').onTabChanged(
-										this.id.substr(	$$('mainTabView').strTabItemPrefix.length	)
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
 									);
 	};// @lock
 
 	tabItemRoliVSysteme.click = function tabItemRoliVSysteme_click (event)// @startlock
 	{// @endlock
 		$$('mainTabView').onTabChanged(
-										this.id.substr(	$$('mainTabView').strTabItemPrefix.length	)
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
 									);
 
 	};// @lock
@@ -147,7 +155,9 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.widget.MenuBar.prototype.getChildrenIDs = function mainMenuBar_getChildrenIDs(strLevelID) {
 		var arrChildrenIDs = [];
 
-		var arrChildren = typeof strLevelID === 'undefined' ? this.getChildren() : $$(""+strLevelID).getChildren() ;
+		var arrChildren;
+		if (typeof strLevelID === 'undefined') arrChildren = this.getChildren();
+		else arrChildren = $$(""+strLevelID).getChildren();
 
 		for (var i = 0; i < arrChildren.length; i++) {
 			var strChildID = arrChildren[i].id;
@@ -208,7 +218,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	$$('mainMenuBar').visibilityControl = function mainMenuBar_visibilityControl() {
 		//??Initialize main menu items visibility on current user rights
 		
-		$$('mainContainer').visibilityControl(	this.getSiblingFiniteItemIDs()	);
+		var arrNewTabsList = this.stripChildIDsPrefixes( this.getSiblingFiniteItemIDs() );
+		
+		if (arrNewTabsList.length > 0) {
+			$$('mainContainer').visibilityControl(arrNewTabsList);
+			$$('mainTabView').selectTab( $$('mainTabView').siblingFiniteItemsIDs[ arrNewTabsList[0] ] );
+			$$('mainTabView').onTabChanged( arrNewTabsList[0] );
+		}
 	}
 
 	$$('mainMenuBar').onLoggedStatusChanged = function mainMenuBar_onLoggedStatusChanged(isLoggedIn) {
@@ -231,8 +247,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 		//var siblingFiniteItemsIDs = this.getSiblingFiniteItems( event.currentTarget.id );
 //		if ( this.isItemFinite(event.currentTarget.id) ) 
-				console.info(this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id )));
-
+//				console.info(this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id )));
+		var arrNewTabsList = this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id ));
+		
+		if (arrNewTabsList.length > 0) {
+			$$('mainContainer').visibilityControl(arrNewTabsList);
+			$$('mainTabView').selectTab( $$('mainTabView').siblingFiniteItemsIDs[ this.stripChildIDsPrefixes( event.currentTarget.id ) ] );
+			$$('mainTabView').onTabChanged( this.stripChildIDsPrefixes( event.currentTarget.id ) );
+		}
+				
 		return false;
 	};
 
@@ -247,17 +270,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};
 
 	$$('mainContainer').visibilityControl = function mainContainer_visibilityControl(newSiblingFiniteItemsIDs) {
-		var intCurrentTabPosition;
-		
-		alert("1");
-		
-		for (var i = 0; i < $$('mainTabView').siblingFiniteItemsIDs.length; i++) {
-			$$('tabItem' + $$('mainTabView').siblingFiniteItemsIDs[i]).show();
-			$$('tabContainer' + $$('mainTabView').siblingFiniteItemsIDs[i]).show();
-			alert("2");
-			
-			if($$('mainTabView').siblingFiniteItemsIDs[i] === $$('mainTabView').strCurrentTabId) intCurrentTabPosition = i;
-		}
+		$$('mainTabView').visibilityControl(newSiblingFiniteItemsIDs);
+
+		return;
+//----
 
 		//If this is first invocation after page loaded or after mainMenu paragraph switching
 		if(($$('mainTabView').strCurrentTabId === "") || (typeof intCurrentTabPosition === 'undefined')) {
@@ -265,39 +281,88 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			intCurrentTabPosition = 0;
 		}
 		
-		$$('mainTabView').onTabChanged(
-						($$('mainTabView').getSelectedTab()).menuItem.id.substr(
-																			$$('mainTabView').strTabItemPrefix.length
-																			)
-				);
 	}
 // @endregion
 
 // @region customTabViewWidgetFunctions
-	$$('mainTabView').onTabChanged = function mainTabView_onTabChanged (strSelectedTabId) {
+	$$('mainTabView').visibilityControl = function mainTabView_visibilityControl(newSiblingFiniteItemsIDs) {
+		var intCurrentTabPosition;
+		var strTabID, i, blFound;
+		
+		console.log("full visibility: ", $$('tabMenuBar').getSiblingFiniteItemIDs());
+		console.log("old visibility: ", this.siblingFiniteItemsIDs);
+		console.log("new visibility: ", newSiblingFiniteItemsIDs);
 
-//		alert("Selected="+strSelectedTabId);
+		//Let's hide unnnecesaary items
+		for (strTabID in this.siblingFiniteItemsIDs) {
+			blFound = false;
 			
+			for (i = 0; i < newSiblingFiniteItemsIDs.length; i++)
+				if (strTabID == newSiblingFiniteItemsIDs[i]) {
+					blFound = true;
+					break;
+				}
+			
+			if (! blFound) {
+//				$$('tabItem' + this.siblingFiniteItemsIDs[strTabID]).hide("visibility");
+//				$$('tabContainer' + this.siblingFiniteItemsIDs[strTabID]).hide("visibility");
+				$$('tabItem' + strTabID).hide("visibility");
+				$$('tabContainer' + strTabID).hide("visibility");
+				delete this.siblingFiniteItemsIDs[strTabID];
+			}
+		}
+		
+		console.warn("all hidden");
+		
+		//Let's show required items (was hided previously)
+		for (i = 0; i < newSiblingFiniteItemsIDs.length; i++)
+			if (typeof this.siblingFiniteItemsIDs[ newSiblingFiniteItemsIDs[i] ] === 'undefined') {
+				
+				console.warn("Let's show '%s'", newSiblingFiniteItemsIDs[i]);
+				
+				$$('tabItem' + newSiblingFiniteItemsIDs[i]).show();
+				$$('tabContainer' + newSiblingFiniteItemsIDs[i]).show();				
+				
+				this.siblingFiniteItemsIDs[ newSiblingFiniteItemsIDs[i] ] = 0;
+			}
+		
+		//Let's update visible tabs numbers in siblingFiniteItemsIDs
+		var arrFullTabsList = $$('tabMenuBar').stripChildIDsPrefixes( $$('tabMenuBar').getSiblingFiniteItemIDs() );
+		for (i = 0; i < arrFullTabsList.length; i++)
+			if (typeof this.siblingFiniteItemsIDs[ arrFullTabsList[i] ] !== 'undefined')
+				this.siblingFiniteItemsIDs[ arrFullTabsList[i] ] = i + 1;
+		
+		//Let's set strCurrentTabId to visible #1 if current 'strCurrentTabId' became invisible
+		//(otherwise set it to $$('mainMenuBar').getSelectedItem().id)
+//		if ((this.strCurrentTabId === "") || (typeof this.siblingFiniteItemsIDs[ this.strCurrentTabId ] === 'undefined')) {
+//			if(newSiblingFiniteItemsIDs.length > 0) {
+//		} else
+//			this.selectTab( this.siblingFiniteItemsIDs[ this.strCurrentTabId ] );
+			
+		
+		
+		//Let's call $$('mainTabView').onTabChanged( updated_strCurrentTabId ) for WebCoponent loading
+		console.log("current visibility: ", this.siblingFiniteItemsIDs);
+	}
+
+	$$('mainTabView').onTabChanged = function mainTabView_onTabChanged (strSelectedTabId) {
 		this.strCurrentTabId = "" + strSelectedTabId;
 		
-//		alert("Selected="+strSelectedTabId);
-		
+		console.info("current tab=%d, menuItemID=%s, ListOfTabs="
+				, strSelectedTabId
+				, $$('mainTabView').getSelectedTab().menuItem.id, 
+				this.siblingFiniteItemsIDs);
+
 		//Let's load selected WebComponent for the first time since page load
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
-//			$$('tabContainer' + this.strSelectedTabId).show();
 
 			$$('tabComponent' + strSelectedTabId).loadComponent({
-				//?? userData: { strSelectedTabId: "" + strSelectedTabId },
-				onSuccess: function () {
-								var dateD = new Date();
-								$$('mainTabView').timeTabLoaded[strSelectedTabId] = dateD.getTime();
-					
-								//!!$$('tabContainer' + strSelectedTabId).show();
-								
-//								alert("Id = "+$$('mainTabView').getSelectedTab().container.id);
-//								$$('mainTabView').getSelectedTab().container.show();
-							}
-			});
+						//?? userData: { strSelectedTabId: "" + strSelectedTabId },
+						onSuccess: function () {
+										var dateD = new Date();
+										$$('mainTabView').timeTabLoaded[strSelectedTabId] = dateD.getTime();
+									}
+					});
 		}
 	};
 // @endregion
@@ -308,10 +373,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	$$('mainTabView').siblingFiniteItemsIDs = {};
 	$$('mainTabView').strTabItemPrefix = "tabItem";
 	$$('tabMenuBar').arrChildIDPrefixes = ['tabItem'];
-
 // @endregion
 
 // @region eventManager// @startlock
+	WAF.addListener("tabItemStaticheskiyKlassifikator", "click", tabItemStaticheskiyKlassifikator.click, "WAF");
 	WAF.addListener("tabItemValuty", "click", tabItemValuty.click, "WAF");
 	WAF.addListener("tabItemRoliVSysteme", "click", tabItemRoliVSysteme.click, "WAF");
 	WAF.addListener("menuItemValuty", "click", menuItemValuty.click, "WAF");
