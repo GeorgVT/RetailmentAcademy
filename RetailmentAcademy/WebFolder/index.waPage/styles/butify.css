@@ -20,20 +20,22 @@
     width: 25%;
     margin-left: auto;
     margin-right: auto;
-/*     padding-left: 1em;
-     padding-right: 1em; */
+    padding-left: 1em;
+     padding-right: 1em;
      text-align: center;
 }
 
 .mainSubmenu {
-     max-width: 100%;
+     min-width: 100%;
      width: -webkit-max-content;
      width: -moz-max-content;
      width: max-content;
-     padding-right: 1em;
+     padding-left: 2px;
+     padding-right: 2px;
 }
 
 .mainSubmenuItem {
+     min-width: 100%;
      width: -webkit-max-content;
      width: -moz-max-content;
      width: max-content;

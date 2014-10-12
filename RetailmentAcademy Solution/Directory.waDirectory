@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?><directory>
 	<group ID="01000000000000000000000000000000" name="Admin">
 		<include user="Admin" ID="359891B4181D22419E260CD139DF1873"/>
-		<include user="Всезнайкин" ID="40371F3EFAA4C449A215885551CD85DF"/>
+		<include user="Полные права" ID="40371F3EFAA4C449A215885551CD85DF"/>
 	</group>
 	<user ID="359891B4181D22419E260CD139DF1873" name="Admin" fullName="Technical administrative account" password="c2be3081d26cf8deb4bfffa4a9d855db"/>
-	<user ID="40371F3EFAA4C449A215885551CD85DF" name="Всезнайкин" fullName="Техническая учетная запись с полными правами" password=""/>
+	<user ID="40371F3EFAA4C449A215885551CD85DF" name="Полные права" fullName="Техническая учетная запись с полными правами" password=""/>
+	<user ID="1EC22644C6B16B48A347C803C8D5FCCD" name="Иванов И. И." fullName="Иванов Иван Иванович" password=""/>
 </directory>
