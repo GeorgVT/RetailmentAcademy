@@ -50,8 +50,8 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 638,
-						"Y": 5
+						"X": 648,
+						"Y": -1
 					}
 				}
 			},
@@ -96,11 +96,11 @@
 				"scalarVisible": "true",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 60,
 						"Y": 465
-					},
-					"pathVisible": true
+					}
 				}
 			},
 			"TovarnayaGruppa": {
@@ -119,35 +119,35 @@
 			"KrupnayaTovarnayaPodruppa": {
 				"panelColor": "#fff",
 				"scalarVisible": "true",
+				"isMinimized": "false",
+				"methodInhVisible": "true",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 684,
 						"Y": 703
-					},
-					"pathVisible": true
-				},
-				"isMinimized": "false",
-				"methodInhVisible": "true"
+					}
+				}
 			},
 			"TovarnayaPodgruppa": {
 				"panelColor": "#B7DDE8",
 				"scalarVisible": "true",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 55,
 						"Y": 923
-					},
-					"pathVisible": true
+					}
 				}
 			}
 		},
 		"model": {
 			"scriptMode": "manual",
 			"scalShowMode": "true",
-			"workspaceLeft": 0,
-			"workspaceTop": 279,
+			"workspaceLeft": 18,
+			"workspaceTop": 0,
 			"relationCurve": {
 				"run": true,
 				"mode": 1
@@ -155,6 +155,44 @@
 		}
 	},
 	"dataClasses": [
+		{
+			"name": "KrupnayaTovarnayaPodruppa",
+			"className": "KrupnayaTovarnayaPodruppa",
+			"collectionName": "NaborKrupnykhTovarnykhPodrupp",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "Name",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "TovarnayaGruppa",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "TovarnayaGruppa",
+					"path": "TovarnayaGruppa"
+				},
+				{
+					"name": "naborTovarnykhPodgrupp",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "NaborTovarnykhPodgrupp",
+					"reversePath": true,
+					"path": "KrupnayaTovarnayaPodgruppa"
+				}
+			]
+		},
 		{
 			"name": "NaimenovanieTovara",
 			"className": "NaimenovanieTovara",
@@ -183,6 +221,37 @@
 					"type": "NaborStrokZakaza",
 					"reversePath": true,
 					"path": "Naimenovanie"
+				}
+			]
+		},
+		{
+			"name": "OtdelKlassifikatora",
+			"className": "OtdelKlassifikatora",
+			"collectionName": "NaborOtdelovKlassifikatora",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "Name",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "naborTovarnykhGrupp",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "NaborTovarnykhGrupp",
+					"reversePath": true,
+					"path": "Otdel"
 				}
 			]
 		},
@@ -218,58 +287,6 @@
 			]
 		},
 		{
-			"name": "RazdelKlassifikatora",
-			"className": "TovarnayaGruppa",
-			"collectionName": "NaborTovarnykhGrupp",
-			"scope": "public",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"scope": "public",
-					"unique": true,
-					"autosequence": true,
-					"type": "long",
-					"primKey": true
-				},
-				{
-					"name": "Name",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "Otdel",
-					"scope": "public",
-					"type": "OtdelKlassifikatora",
-					"kind": "relatedEntity",
-					"path": "OtdelKlassifikatora"
-				},
-				{
-					"name": "TovarnayaPodgruppa",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "naborStrokBudjeta",
-					"kind": "relatedEntities",
-					"scope": "public",
-					"type": "NaborStrokBudjeta",
-					"reversePath": true,
-					"path": "TovarnayaGruppa"
-				},
-				{
-					"name": "naborKrupnykhTovarnykhPodrupp",
-					"scope": "public",
-					"reversePath": true,
-					"path": "TovarnayaGruppa",
-					"type": "NaborKrupnykhTovarnykhPodrupp",
-					"kind": "relatedEntities"
-				}
-			]
-		},
-		{
 			"name": "Sezon",
 			"className": "Sezon",
 			"collectionName": "NaborSezonov",
@@ -289,6 +306,15 @@
 					"kind": "storage",
 					"scope": "public",
 					"type": "string"
+				},
+				{
+					"name": "NachaloProdagh",
+					"scope": "public",
+					"type": "date",
+					"kind": "storage",
+					"not_null": true,
+					"simpleDate": true,
+					"identifying": true
 				},
 				{
 					"name": "naborStrokBudjeta",
@@ -447,10 +473,10 @@
 				},
 				{
 					"name": "TovarnayaPodgruppa",
+					"kind": "relatedEntity",
 					"scope": "public",
-					"path": "TovarnayaPodgruppa",
 					"type": "TovarnayaPodgruppa",
-					"kind": "relatedEntity"
+					"path": "TovarnayaPodgruppa"
 				}
 			]
 		},
@@ -490,6 +516,96 @@
 					"type": "NaborStrokZakaza",
 					"reversePath": true,
 					"path": "TorgovayaMarka"
+				}
+			]
+		},
+		{
+			"name": "TovarnayaGruppa",
+			"className": "TovarnayaGruppa",
+			"collectionName": "NaborTovarnykhGrupp",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "Name",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "Otdel",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "OtdelKlassifikatora",
+					"path": "OtdelKlassifikatora"
+				},
+				{
+					"name": "TovarnayaPodgruppa",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "naborStrokBudjeta",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "NaborStrokBudjeta",
+					"reversePath": true,
+					"path": "TovarnayaGruppa"
+				},
+				{
+					"name": "naborKrupnykhTovarnykhPodrupp",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "NaborKrupnykhTovarnykhPodrupp",
+					"reversePath": true,
+					"path": "TovarnayaGruppa"
+				}
+			]
+		},
+		{
+			"name": "TovarnayaPodgruppa",
+			"className": "TovarnayaPodgruppa",
+			"collectionName": "NaborTovarnykhPodgrupp",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "Name",
+					"kind": "storage",
+					"scope": "public",
+					"type": "string"
+				},
+				{
+					"name": "KrupnayaTovarnayaPodgruppa",
+					"kind": "relatedEntity",
+					"scope": "public",
+					"type": "KrupnayaTovarnayaPodruppa",
+					"path": "KrupnayaTovarnayaPodruppa"
+				},
+				{
+					"name": "naborStrokZakaza",
+					"kind": "relatedEntities",
+					"scope": "public",
+					"type": "NaborStrokZakaza",
+					"reversePath": true,
+					"path": "TovarnayaPodgruppa"
 				}
 			]
 		},
@@ -537,104 +653,7 @@
 					"path": "ValutaZakupki"
 				}
 			]
-		},
-		{
-			"collectionName": "NaborOtdelovKlassifikatora",
-			"className": "OtdelKlassifikatora",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"type": "long",
-					"autosequence": "true",
-					"unique": "true",
-					"primKey": "true"
-				},
-				{
-					"name": "Name",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage"
-				},
-				{
-					"name": "naborTovarnykhGrupp",
-					"scope": "public",
-					"reversePath": true,
-					"path": "Otdel",
-					"type": "NaborTovarnykhGrupp",
-					"kind": "relatedEntities"
-				}
-			]
-		},
-		{
-			"collectionName": "NaborKrupnykhTovarnykhPodrupp",
-			"className": "KrupnayaTovarnayaPodruppa",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"type": "long",
-					"autosequence": "true",
-					"unique": "true",
-					"primKey": "true"
-				},
-				{
-					"name": "Name",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage"
-				},
-				{
-					"name": "TovarnayaGruppa",
-					"scope": "public",
-					"path": "TovarnayaGruppa",
-					"type": "TovarnayaGruppa",
-					"kind": "relatedEntity"
-				},
-				{
-					"name": "naborTovarnykhPodgrupp",
-					"scope": "public",
-					"reversePath": true,
-					"path": "KrupnayaTovarnayaPodgruppa",
-					"type": "NaborTovarnykhPodgrupp",
-					"kind": "relatedEntities"
-				}
-			]
-		},
-		{
-			"collectionName": "NaborTovarnykhPodgrupp",
-			"className": "TovarnayaPodgruppa",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"type": "long",
-					"autosequence": "true",
-					"unique": "true",
-					"primKey": "true"
-				},
-				{
-					"name": "Name",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage"
-				},
-				{
-					"name": "KrupnayaTovarnayaPodgruppa",
-					"scope": "public",
-					"path": "KrupnayaTovarnayaPodruppa",
-					"type": "KrupnayaTovarnayaPodruppa",
-					"kind": "relatedEntity"
-				},
-				{
-					"name": "naborStrokZakaza",
-					"scope": "public",
-					"reversePath": true,
-					"path": "TovarnayaPodgruppa",
-					"type": "NaborStrokZakaza",
-					"kind": "relatedEntities"
-				}
-			]
 		}
-	]
+	],
+	"type": []
 }
