@@ -238,21 +238,19 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	};
 
 	$$('mainMenuBar').processEvents = function mainMenuBar_processEvents(event) {
-		
-		//!!
-//		alert("Event.type: " + event.type 
-//							+ "\nTarget: "+event.currentTarget.id 
-//							+ " (of kind: " + $$(event.currentTarget.id).kind + ")");
-		//if(event.Type == "click") alert("Target: "+event.target.id);
-
-		//var siblingFiniteItemsIDs = this.getSiblingFiniteItems( event.currentTarget.id );
-//		if ( this.isItemFinite(event.currentTarget.id) ) 
-//				console.info(this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id )));
 		var arrNewTabsList = this.stripChildIDsPrefixes(this.getSiblingFiniteItemIDs( event.currentTarget.id ));
 		
 		if (arrNewTabsList.length > 0) {
 			$$('mainContainer').visibilityControl(arrNewTabsList);
-			$$('mainTabView').selectTab( $$('mainTabView').siblingFiniteItemsIDs[ this.stripChildIDsPrefixes( event.currentTarget.id ) ] );
+			$$('mainTabView').selectTab( 
+						typeof ( $$('mainTabView').siblingFiniteItemsIDs[ 
+												this.stripChildIDsPrefixes( event.currentTarget.id ) 
+												] 
+								) 
+								!== 'undefined'
+						? $$('mainTabView').siblingFiniteItemsIDs[ this.stripChildIDsPrefixes( event.currentTarget.id ) ]
+						: $$('mainTabView').siblingFiniteItemsIDs[ arrNewTabsList[0] ]
+					);
 			$$('mainTabView').onTabChanged( this.stripChildIDsPrefixes( event.currentTarget.id ) );
 		}
 				
@@ -273,14 +271,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$('mainTabView').visibilityControl(newSiblingFiniteItemsIDs);
 
 		return;
-//----
-
-		//If this is first invocation after page loaded or after mainMenu paragraph switching
-		if(($$('mainTabView').strCurrentTabId === "") || (typeof intCurrentTabPosition === 'undefined')) {
-			$$('mainTabView').selectTab(1);
-			intCurrentTabPosition = 0;
-		}
-		
 	}
 // @endregion
 
@@ -289,10 +279,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		var intCurrentTabPosition;
 		var strTabID, i, blFound;
 		
-		console.log("full visibility: ", $$('tabMenuBar').getSiblingFiniteItemIDs());
-		console.log("old visibility: ", this.siblingFiniteItemsIDs);
-		console.log("new visibility: ", newSiblingFiniteItemsIDs);
-
 		//Let's hide unnnecesaary items
 		for (strTabID in this.siblingFiniteItemsIDs) {
 			blFound = false;
@@ -304,21 +290,15 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				}
 			
 			if (! blFound) {
-//				$$('tabItem' + this.siblingFiniteItemsIDs[strTabID]).hide("visibility");
-//				$$('tabContainer' + this.siblingFiniteItemsIDs[strTabID]).hide("visibility");
 				$$('tabItem' + strTabID).hide("visibility");
 				$$('tabContainer' + strTabID).hide("visibility");
 				delete this.siblingFiniteItemsIDs[strTabID];
 			}
 		}
 		
-		console.warn("all hidden");
-		
 		//Let's show required items (was hided previously)
 		for (i = 0; i < newSiblingFiniteItemsIDs.length; i++)
 			if (typeof this.siblingFiniteItemsIDs[ newSiblingFiniteItemsIDs[i] ] === 'undefined') {
-				
-				console.warn("Let's show '%s'", newSiblingFiniteItemsIDs[i]);
 				
 				$$('tabItem' + newSiblingFiniteItemsIDs[i]).show();
 				$$('tabContainer' + newSiblingFiniteItemsIDs[i]).show();				
@@ -332,33 +312,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			if (typeof this.siblingFiniteItemsIDs[ arrFullTabsList[i] ] !== 'undefined')
 				this.siblingFiniteItemsIDs[ arrFullTabsList[i] ] = i + 1;
 		
-		//Let's set strCurrentTabId to visible #1 if current 'strCurrentTabId' became invisible
-		//(otherwise set it to $$('mainMenuBar').getSelectedItem().id)
-//		if ((this.strCurrentTabId === "") || (typeof this.siblingFiniteItemsIDs[ this.strCurrentTabId ] === 'undefined')) {
-//			if(newSiblingFiniteItemsIDs.length > 0) {
-//		} else
-//			this.selectTab( this.siblingFiniteItemsIDs[ this.strCurrentTabId ] );
-			
-		
-		
-		//Let's call $$('mainTabView').onTabChanged( updated_strCurrentTabId ) for WebCoponent loading
-		console.log("current visibility: ", this.siblingFiniteItemsIDs);
 	}
 
 	$$('mainTabView').onTabChanged = function mainTabView_onTabChanged (strSelectedTabId) {
 		this.strCurrentTabId = "" + strSelectedTabId;
 		
-		console.info("current tab=%d, menuItemID=%s, ListOfTabs="
-				, strSelectedTabId
-				, $$('mainTabView').getSelectedTab().menuItem.id, 
-				this.siblingFiniteItemsIDs);
-
 		//Let's load selected WebComponent for the first time since page load
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
 
-//			$$('tabComponent' + strSelectedTabId).rebuild();
-//			console.dir($$('tabComponent' + strSelectedTabId));
-		
 			$$('tabComponent' + strSelectedTabId).loadComponent({
 						//?? userData: { strSelectedTabId: "" + strSelectedTabId },
 						onSuccess: function mainTabView_onComponentLoaded() {
@@ -366,11 +327,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 										$$('mainTabView').timeTabLoaded[strSelectedTabId] = dateD.getTime();
 									}
 					});
-		} else
-			console.info("current tab=%d, loaded on=%d"
-					, strSelectedTabId
-					, this.timeTabLoaded[strSelectedTabId]);
-		
+		}		
 	};
 // @endregion
 
