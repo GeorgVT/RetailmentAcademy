@@ -3,199 +3,78 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}richText8 {
-	 z-index: 4;
-	 width: 57px;
-	 height: 13px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container20 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container19 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container18 {
+#{id}container5 {
 	 z-index: 2;
-	 height: 40px;
-	 top: 478px;
+	 width: 512px;
+	 height: 260px;
+	 top: 258px;
 	 left: 0px;
-	 right: 0px;
 	
 	 position: absolute;
 	 
 }
 
-#{id}richText7 {
-	 z-index: 4;
-	 width: 94px;
-	 height: 13px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container17 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container16 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container15 {
-	 z-index: 2;
-	 height: 40px;
-	 top: 438px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}richText6 {
-	 z-index: 4;
-	 width: 47px;
-	 height: 13px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container14 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container13 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container10 {
-	 z-index: 2;
-	 height: 40px;
-	 top: 398px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}richText5 {
-	 z-index: 4;
-	 width: 19px;
-	 height: 13px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container7 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container4 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container1 {
-	 z-index: 2;
-	 height: 398px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}mainAccordion {
-	 z-index: 2;
-	 top: 0px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}gridOtdelKlassifikatora {
+#{id}container3 {
 	 z-index: 1;
+	 width: 512px;
+	 height: 258px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}mainContainer {
+	 z-index: 3;
 	 top: 0px;
 	 bottom: 0px;
 	 left: 0px;
-	 right: 0px;
+	 right: 17px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerOtdelKlassifikatora {
+	 z-index: 1;
+	 width: 512px;
+	 height: 129px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerTovarnykhGrupp {
+	 z-index: 2;
+	 width: 512px;
+	 height: 129px;
+	 top: 129px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerKrupnykhTovarnykhPodgrupp {
+	 z-index: 1;
+	 width: 512px;
+	 height: 129px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}containerTovarnykhPodgrupp {
+	 z-index: 2;
+	 width: 512px;
+	 height: 131px;
+	 top: 129px;
+	 left: 0px;
 	
 	 position: absolute;
 	 
