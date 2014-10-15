@@ -34,7 +34,7 @@
 	 top: 0px;
 	 bottom: 0px;
 	 left: 0px;
-	 right: 0px;
+	 right: 1px;
 	
 	 position: absolute;
 	 
@@ -85,6 +85,17 @@
 }
 
 #{id}gridOtdelKlassifikatora {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}gridTovarnykhGrupp {
 	 z-index: 1;
 	 top: 0px;
 	 bottom: 0px;
