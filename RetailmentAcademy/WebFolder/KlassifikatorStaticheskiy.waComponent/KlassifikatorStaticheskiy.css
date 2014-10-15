@@ -34,7 +34,7 @@
 	 top: 0px;
 	 bottom: 0px;
 	 left: 0px;
-	 right: 1px;
+	 right: 0px;
 	
 	 position: absolute;
 	 
@@ -96,6 +96,17 @@
 }
 
 #{id}gridTovarnykhGrupp {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}gridKrupnykhTovarnykhPodgrupp {
 	 z-index: 1;
 	 top: 0px;
 	 bottom: 0px;
