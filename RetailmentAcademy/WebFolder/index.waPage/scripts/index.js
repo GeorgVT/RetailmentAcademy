@@ -170,11 +170,11 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			}
 		}
 		return arrChildrenIDs;
-	}
+	};
 	
 	WAF.widget.MenuBar.prototype.isItemFinite = function MenuBar_isItemFinite (strItemID) {
 		return (this.getChildrenIDs(strItemID).length === 0);
-	}
+	};
 
 	WAF.widget.MenuBar.prototype.getSiblingFiniteItemIDs = function MenuBar_getSiblingFiniteItemIDs(strItemId) {
 		var arrFiniteSiblings = [];
@@ -197,7 +197,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 					arrFiniteSiblings.push( arrSiblings[i] );
 
 		return arrFiniteSiblings;
-	}
+	};
 
 	WAF.widget.MenuBar.prototype.stripChildIDsPrefixes = function MenuBar_stripChildIDsPrefix(siblingID) {
 		var strippedID = [];
@@ -213,7 +213,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		else for (var i = 0; i < siblingID.length; i++) strippedID.push(this.stripChildIDsPrefixes(siblingID[i]));
 		
 		return strippedID;
-	}
+	};
 
 	$$('mainMenuBar').visibilityControl = function mainMenuBar_visibilityControl() {
 		//??Initialize main menu items visibility on current user rights
@@ -225,7 +225,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			$$('mainTabView').selectTab( $$('mainTabView').siblingFiniteItemsIDs[ arrNewTabsList[0] ] );
 			$$('mainTabView').onTabChanged( arrNewTabsList[0] );
 		}
-	}
+	};
 
 	$$('mainMenuBar').onLoggedStatusChanged = function mainMenuBar_onLoggedStatusChanged(isLoggedIn) {
 		if (! isLoggedIn) {
@@ -271,7 +271,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$$('mainTabView').visibilityControl(newSiblingFiniteItemsIDs);
 
 		return;
-	}
+	};
 // @endregion
 
 // @region customTabViewWidgetFunctions
@@ -312,7 +312,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 			if (typeof this.siblingFiniteItemsIDs[ arrFullTabsList[i] ] !== 'undefined')
 				this.siblingFiniteItemsIDs[ arrFullTabsList[i] ] = i + 1;
 		
-	}
+	};
 
 	$$('mainTabView').onTabChanged = function mainTabView_onTabChanged (strSelectedTabId) {
 		this.strCurrentTabId = "" + strSelectedTabId;
@@ -321,6 +321,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
 
 			$$('tabComponent' + strSelectedTabId).loadComponent({
+			//!!WAF.loadComponent( {
+			//!!			id: 'tabComponent' + strSelectedTabId,
 						//?? userData: { strSelectedTabId: "" + strSelectedTabId },
 						onSuccess: function mainTabView_onComponentLoaded() {
 										var dateD = new Date();
