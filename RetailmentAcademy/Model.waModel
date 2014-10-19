@@ -147,19 +147,19 @@
 				"scalarVisible": "true",
 				"panel": {
 					"isOpen": "true",
+					"pathVisible": true,
 					"position": {
 						"X": 700,
 						"Y": 934
-					},
-					"pathVisible": true
+					}
 				}
 			}
 		},
 		"model": {
 			"scriptMode": "manual",
 			"scalShowMode": "true",
-			"workspaceLeft": 505,
-			"workspaceTop": 681,
+			"workspaceLeft": 579,
+			"workspaceTop": 847,
 			"relationCurve": {
 				"run": true,
 				"mode": 1
@@ -203,6 +203,40 @@
 					"type": "NaborTovarnykhPodgrupp",
 					"reversePath": true,
 					"path": "KrupnayaTovarnayaPodgruppa"
+				}
+			]
+		},
+		{
+			"name": "Magazin",
+			"className": "Magazin",
+			"collectionName": "NaborMagazinov",
+			"scope": "public",
+			"attributes": [
+				{
+					"name": "ID",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"autosequence": true,
+					"type": "long",
+					"primKey": true
+				},
+				{
+					"name": "Name",
+					"kind": "storage",
+					"scope": "public",
+					"unique": true,
+					"not_null": true,
+					"type": "string",
+					"indexKind": "keywords",
+					"autoComplete": true,
+					"identifying": true
+				},
+				{
+					"name": "ShortName",
+					"scope": "public",
+					"type": "string",
+					"kind": "storage"
 				}
 			]
 		},
@@ -705,31 +739,6 @@
 					"type": "NaborStrokZakaza",
 					"reversePath": true,
 					"path": "ValutaZakupki"
-				}
-			]
-		},
-		{
-			"collectionName": "NaborMagazinov",
-			"className": "Magazin",
-			"attributes": [
-				{
-					"name": "ID",
-					"kind": "storage",
-					"type": "long",
-					"autosequence": "true",
-					"unique": "true",
-					"primKey": "true"
-				},
-				{
-					"name": "Name",
-					"scope": "public",
-					"type": "string",
-					"kind": "storage",
-					"not_null": true,
-					"identifying": true,
-					"indexKind": "keywords",
-					"autoComplete": true,
-					"unique": true
 				}
 			]
 		}

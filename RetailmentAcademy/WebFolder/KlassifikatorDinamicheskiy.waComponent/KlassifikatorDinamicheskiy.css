@@ -3,53 +3,9 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}richText3 {
-	 z-index: 4;
-	 width: 57px;
-	 height: 13px;
-	 top: 11px;
-	 left: 30px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container9 {
-	 z-index: 3;
-	 top: 40px;
-	 bottom: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container8 {
-	 z-index: 3;
-	 height: 40px;
-	 top: 0px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
-#{id}container7 {
-	 z-index: 2;
-	 height: 40px;
-	 top: 471px;
-	 left: 0px;
-	 right: 0px;
-	
-	 position: absolute;
-	 
-}
-
 #{id}richText2 {
 	 z-index: 4;
-	 width: 57px;
+	 width: 25px;
 	 height: 13px;
 	 top: 11px;
 	 left: 30px;
@@ -82,8 +38,8 @@
 
 #{id}container4 {
 	 z-index: 2;
-	 height: 431px;
-	 top: 40px;
+	 height: 40px;
+	 top: 471px;
 	 left: 0px;
 	 right: 0px;
 	
@@ -93,7 +49,7 @@
 
 #{id}richText1 {
 	 z-index: 4;
-	 width: 57px;
+	 width: 44px;
 	 height: 13px;
 	 top: 11px;
 	 left: 30px;
@@ -126,7 +82,7 @@
 
 #{id}container1 {
 	 z-index: 2;
-	 height: 40px;
+	 height: 471px;
 	 top: 0px;
 	 left: 0px;
 	 right: 0px;
@@ -141,6 +97,28 @@
 	 bottom: 0px;
 	 left: 0px;
 	 right: 25px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}gridTradeMarks {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}gridMagaziny {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
 	
 	 position: absolute;
 	 
