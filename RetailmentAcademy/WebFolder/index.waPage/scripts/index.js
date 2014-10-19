@@ -8,6 +8,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region namespaceDeclaration// @startlock
+	var menuItemDinamicheskiyKlassifikator = {};	// @menuItem
+	var tabItemDinamicheskiyKlassifikator = {};	// @menuItem
 	var tabItemStaticheskiyKlassifikator = {};	// @menuItem
 	var tabItemValuty = {};	// @menuItem
 	var tabItemRoliVSysteme = {};	// @menuItem
@@ -27,6 +29,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 // eventHandlers// @lock
+
+	menuItemDinamicheskiyKlassifikator.click = function menuItemDinamicheskiyKlassifikator_click (event)// @startlock
+	{// @endlock
+		return $$('mainMenuBar').processEvents(event);
+	};// @lock
+
+	tabItemDinamicheskiyKlassifikator.click = function tabItemDinamicheskiyKlassifikator_click (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged(
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
+									);
+	};// @lock
 
 	tabItemStaticheskiyKlassifikator.click = function tabItemStaticheskiyKlassifikator_click (event)// @startlock
 	{// @endlock
@@ -342,6 +356,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItemDinamicheskiyKlassifikator", "click", menuItemDinamicheskiyKlassifikator.click, "WAF");
+	WAF.addListener("tabItemDinamicheskiyKlassifikator", "click", tabItemDinamicheskiyKlassifikator.click, "WAF");
 	WAF.addListener("tabItemStaticheskiyKlassifikator", "click", tabItemStaticheskiyKlassifikator.click, "WAF");
 	WAF.addListener("tabItemValuty", "click", tabItemValuty.click, "WAF");
 	WAF.addListener("tabItemRoliVSysteme", "click", tabItemRoliVSysteme.click, "WAF");

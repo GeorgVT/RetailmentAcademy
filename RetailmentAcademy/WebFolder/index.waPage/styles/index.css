@@ -5,7 +5,6 @@
 
 #richText11 {
 	 z-index: 1;
-/*	 width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -17,7 +16,6 @@
 #richText7 {
 	 z-index: 1;
 	 width: 328px;
-/*	 height: 22px; */
 	 top: 0px;
 	 left: 0px;
 	
@@ -37,7 +35,6 @@
 
 #richText3 {
 	 z-index: 1;
-	 /* width: 50px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -48,7 +45,6 @@
 
 #richText2 {
 	 z-index: 1;
-	 /* width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -59,7 +55,6 @@
 
 #richText1 {
 	 z-index: 1;
-	 /* width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -81,7 +76,6 @@
 
 #richText16 {
 	 z-index: 1;
-	 /* width: 150px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -92,7 +86,6 @@
 
 #menuRoliVSysteme {
 	 z-index: 4;
-	 /* width: 110px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -103,7 +96,6 @@
 
 #richText10 {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
@@ -114,7 +106,6 @@
 
 #menuItemValuty {
 	 z-index: 2;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -125,7 +116,6 @@
 
 #richText9 {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
@@ -136,7 +126,6 @@
 
 #menuItemStaticheskiyKlassifikator {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -147,7 +136,6 @@
 
 #menuBar4 {
 	 z-index: 2;
-	 /* width: 149px; */
 	 height: 68px;
 	 top: 18px;
 	 left: 0px;
@@ -158,7 +146,6 @@
 
 #richText15 {
 	 z-index: 1;
-	 /* width: 149px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -169,7 +156,6 @@
 
 #menuKlassifikatory {
 	 z-index: 3;
-	 /* width: 110px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -180,7 +166,6 @@
 
 #richText8 {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
@@ -191,7 +176,6 @@
 
 #menuItemRaspredelenieBudgeta {
 	 z-index: 2;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -202,7 +186,6 @@
 
 #richText6 {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
@@ -213,7 +196,6 @@
 
 #menuItemPlanFact {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -224,7 +206,6 @@
 
 #menuBar3 {
 	 z-index: 2;
-	 /* width: 149px; */
 	 height: 46px;
 	 top: 18px;
 	 left: 0px;
@@ -235,7 +216,6 @@
 
 #richText14 {
 	 z-index: 1;
-	 /* width: 149px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -246,7 +226,6 @@
 
 #menuOtchety {
 	 z-index: 2;
-	 /* width: 110px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -257,7 +236,6 @@
 
 #richText5 {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -268,7 +246,6 @@
 
 #menuItemZakazy {
 	 z-index: 2;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -279,7 +256,6 @@
 
 #richText4 {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
@@ -290,7 +266,6 @@
 
 #menuItemBudgety {
 	 z-index: 1;
-	 /* width: 145px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -301,7 +276,6 @@
 
 #menuBar1 {
 	 z-index: 2;
-	 /* width: 149px; */
 	 height: 46px;
 	 top: 18px;
 	 left: 0px;
@@ -312,7 +286,6 @@
 
 #richText13 {
 	 z-index: 1;
-	 /* width: 149px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -323,7 +296,6 @@
 
 #menuBudgetyIZakazy {
 	 z-index: 1;
-	 /* width: 110px; */
 	 height: 18px;
 	 top: 0px;
 	 left: 0px;
@@ -367,7 +339,6 @@
 
 #tabItemRoliVSysteme {
 	 z-index: 1;
-	 /* width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -384,13 +355,11 @@
 	 right: 0px;
 	
 	 position: absolute;
-	 /* background-color: rgb(255, 255, 170); */
 	 
 }
 
 #tabItemValuty {
 	 z-index: 2;
-	 /* width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -407,7 +376,6 @@
 	 right: 0px;
 	
 	 position: absolute;
-	 /* background-color: rgb(170, 255, 170); */
 	 
 }
 
@@ -446,7 +414,6 @@
 
 #tabItemStaticheskiyKlassifikator {
 	 z-index: 3;
-	 /* width: 110px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -478,8 +445,7 @@
 }
 
 #menuItemDinamicheskiyKlassifikator {
-	 z-index: 3;
-/*	 width: 328px; */
+	 z-index: 1;
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -489,8 +455,7 @@
 }
 
 #tabItemDinamicheskiyKlassifikator {
-	 z-index: 4;
-/*	 width: 66px; */
+	 z-index: 3;
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -500,7 +465,7 @@
 }
 
 #tabContainerDinamicheskiyKlassifikator {
-	 z-index: 5;
+	 z-index: 4;
 	 right: 0px;
 	 top: 23px;
 	 bottom: 0px;
