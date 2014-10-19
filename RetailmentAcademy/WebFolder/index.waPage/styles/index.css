@@ -3,6 +3,38 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#richText11 {
+	 z-index: 1;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText7 {
+	 z-index: 1;
+	 width: 328px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabMenuBar > .waf-menuItem {
+	 margin-bottom: 0px;
+	 
+}
+
+#tabMenuBar > .waf-menuItem:not(.waf-menuItem-last) {
+	 margin-right: 5px;
+	 
+}
+
 #richText3 {
 	 z-index: 1;
 	 /* width: 50px; */
@@ -44,7 +76,6 @@
 	 right: 24px;
 	
 	 position: absolute;
-	 /* background-color: rgb(255, 170, 212); */
 	 
 }
 
@@ -73,7 +104,7 @@
 #richText10 {
 	 z-index: 1;
 	 /* width: 145px; */
-	 height: 22px;
+	 height: 20px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -117,7 +148,7 @@
 #menuBar4 {
 	 z-index: 2;
 	 /* width: 149px; */
-	 height: 46px;
+	 height: 68px;
 	 top: 18px;
 	 left: 0px;
 	
@@ -436,6 +467,50 @@
 }
 
 #tabComponentStaticheskiyKlassifikator {
+	 z-index: 6;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#menuItemDinamicheskiyKlassifikator {
+	 z-index: 3;
+	 width: 328px;
+	 height: 22px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabItemDinamicheskiyKlassifikator {
+	 z-index: 4;
+	 width: 66px;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabContainerDinamicheskiyKlassifikator {
+	 z-index: 5;
+	 width: 484px;
+	 top: 23px;
+	 bottom: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabComponentDinamicheskiyKlassifikator {
 	 z-index: 6;
 	 top: 0px;
 	 bottom: 0px;
