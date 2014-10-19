@@ -5,7 +5,7 @@
 
 #richText11 {
 	 z-index: 1;
-	 width: 66px;
+/*	 width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -17,7 +17,7 @@
 #richText7 {
 	 z-index: 1;
 	 width: 328px;
-	 height: 22px;
+/*	 height: 22px; */
 	 top: 0px;
 	 left: 0px;
 	
@@ -479,7 +479,7 @@
 
 #menuItemDinamicheskiyKlassifikator {
 	 z-index: 3;
-	 width: 328px;
+/*	 width: 328px; */
 	 height: 22px;
 	 top: 0px;
 	 left: 0px;
@@ -490,7 +490,7 @@
 
 #tabItemDinamicheskiyKlassifikator {
 	 z-index: 4;
-	 width: 66px;
+/*	 width: 66px; */
 	 height: 23px;
 	 top: 0px;
 	 left: 0px;
@@ -501,7 +501,7 @@
 
 #tabContainerDinamicheskiyKlassifikator {
 	 z-index: 5;
-	 width: 484px;
+	 right: 0px;
 	 top: 23px;
 	 bottom: 0px;
 	 left: 0px;
