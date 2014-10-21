@@ -9,8 +9,8 @@
 
 #{id}container5 {
 	 z-index: 2;
-	 width: 512px;
-	 height: 260px;
+	 width: 494px;
+	 height: 253px;
 	 top: 258px;
 	 left: 0px;
 	
@@ -20,7 +20,7 @@
 
 #{id}container3 {
 	 z-index: 1;
-	 width: 512px;
+	 width: 494px;
 	 height: 258px;
 	 top: 0px;
 	 left: 0px;
@@ -34,7 +34,7 @@
 	 top: 0px;
 	 bottom: 0px;
 	 left: 0px;
-	 right: 0px;
+	 right: 18px;
 	
 	 position: absolute;
 	 
@@ -42,7 +42,7 @@
 
 #{id}containerOtdelKlassifikatora {
 	 z-index: 1;
-	 width: 512px;
+	 width: 494px;
 	 height: 129px;
 	 top: 0px;
 	 left: 0px;
@@ -53,7 +53,7 @@
 
 #{id}containerTovarnykhGrupp {
 	 z-index: 2;
-	 width: 512px;
+	 width: 494px;
 	 height: 129px;
 	 top: 129px;
 	 left: 0px;
@@ -64,7 +64,7 @@
 
 #{id}containerKrupnykhTovarnykhPodgrupp {
 	 z-index: 1;
-	 width: 512px;
+	 width: 494px;
 	 height: 129px;
 	 top: 0px;
 	 left: 0px;
@@ -75,8 +75,8 @@
 
 #{id}containerTovarnykhPodgrupp {
 	 z-index: 2;
-	 width: 512px;
-	 height: 131px;
+	 width: 494px;
+	 height: 124px;
 	 top: 129px;
 	 left: 0px;
 	
@@ -95,7 +95,7 @@
 	 
 }
 
-#{id}gridTovarnykhGrupp {
+#{id}gridKrupnykhTovarnykhPodgrupp {
 	 z-index: 1;
 	 top: 0px;
 	 bottom: 0px;
@@ -106,7 +106,7 @@
 	 
 }
 
-#{id}gridKrupnykhTovarnykhPodgrupp {
+#{id}gridTovarnykhGrupp {
 	 z-index: 1;
 	 top: 0px;
 	 bottom: 0px;

@@ -3,6 +3,50 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}richText3 {
+	 z-index: 4;
+	 width: 44px;
+	 height: 13px;
+	 top: 11px;
+	 left: 30px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container9 {
+	 z-index: 3;
+	 top: 40px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container8 {
+	 z-index: 3;
+	 height: 40px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}container7 {
+	 z-index: 2;
+	 height: 40px;
+	 top: 471px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}richText2 {
 	 z-index: 4;
 	 width: 25px;
@@ -39,7 +83,7 @@
 #{id}container4 {
 	 z-index: 2;
 	 height: 40px;
-	 top: 290px;
+	 top: 431px;
 	 left: 0px;
 	 right: 0px;
 	
@@ -82,7 +126,7 @@
 
 #{id}container1 {
 	 z-index: 2;
-	 height: 290px;
+	 height: 431px;
 	 top: 0px;
 	 left: 0px;
 	 right: 0px;
@@ -114,6 +158,17 @@
 }
 
 #{id}gridMagaziny {
+	 z-index: 1;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}gridPrinadlezhnost {
 	 z-index: 1;
 	 top: 0px;
 	 bottom: 0px;
