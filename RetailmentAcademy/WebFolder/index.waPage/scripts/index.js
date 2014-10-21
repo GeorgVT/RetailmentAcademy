@@ -30,18 +30,18 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var loginBar = {};	// @login
 // @endregion// @endlock
 
-	strStaticTitle = "" + document.title + ": ";
+	strStaticTitle = ": " + document.title;
 
 // eventHandlers// @lock
 
 	sezonEvent.onCurrentElementChange = function sezonEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
-//		var objCurrentSezon = this.getCurrentElement();
-//		if (objCurrentSezon !== null) {
-//			if (! objCurrentSezon.isNew()) 
-//					document.title = "" + strStaticTitle + objCurrentSezon.Name.value;
-//			console.log(objCurrentSezon);
-//		}
+		var objCurrentSezon = this.getCurrentElement();
+		if (objCurrentSezon !== null) {
+			if (! objCurrentSezon.isNew()) 
+					document.title = "" + objCurrentSezon.Name.value + strStaticTitle;
+			console.log(objCurrentSezon);
+		}
 	};// @lock
 
 	menuItemDinamicheskiyKlassifikator.click = function menuItemDinamicheskiyKlassifikator_click (event)// @startlock

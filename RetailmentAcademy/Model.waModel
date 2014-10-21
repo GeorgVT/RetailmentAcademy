@@ -198,8 +198,8 @@
 		{
 			"scriptMode" : "manual",
 			"scalShowMode" : "true",
-			"workspaceLeft" : 657,
-			"workspaceTop" : 1064,
+			"workspaceLeft" : 605,
+			"workspaceTop" : 834,
 			"relationCurve" : 
 			{
 				"run" : true,
@@ -280,7 +280,7 @@
 					"unique" : true,
 					"not_null" : true,
 					"type" : "string",
-					"indexKind" : "keywords",
+					"indexKind" : "auto",
 					"autoComplete" : true,
 					"identifying" : true
 				},
@@ -442,10 +442,11 @@
 					"name" : "Name",
 					"kind" : "storage",
 					"scope" : "public",
+					"indexed" : true,
 					"unique" : true,
 					"not_null" : true,
 					"type" : "string",
-					"indexKind" : "keywords",
+					"indexKind" : "auto",
 					"autoComplete" : true,
 					"identifying" : true
 				},
@@ -817,7 +818,7 @@
 					"unique" : true,
 					"not_null" : true,
 					"type" : "string",
-					"indexKind" : "keywords",
+					"indexKind" : "auto",
 					"autoComplete" : true
 				},
 				{
