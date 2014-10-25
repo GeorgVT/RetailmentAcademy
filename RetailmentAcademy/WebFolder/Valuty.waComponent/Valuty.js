@@ -7,7 +7,7 @@ function constructor (id) {
 
 	// @region beginComponentDeclaration// @startlock
 	var $comp = this;
-	this.name = 'KlassifikatorValut';
+	this.name = 'Valuty';
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock

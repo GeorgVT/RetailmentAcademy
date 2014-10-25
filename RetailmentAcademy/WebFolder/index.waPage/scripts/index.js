@@ -348,12 +348,14 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
 
 			//!!$$('tabComponent' + strSelectedTabId).loadComponent({
+			console.info('Loading: "' + strSelectedTabId + '.waComponent"');
 			WAF.loadComponent( {
 						id: 'tabComponent' + strSelectedTabId,
-						path: '' + strSelectedTabId + '.waComponent',
+						path: '/' + strSelectedTabId + '.waComponent',
 						//?? userData: { strSelectedTabId: "" + strSelectedTabId },
 						onSuccess: function mainTabView_onComponentLoaded() {
 										var dateD = new Date();
+										console.warn('Loaded: "' + strSelectedTabId + '.waComponent"');
 										$$('mainTabView').timeTabLoaded[strSelectedTabId] = dateD.getTime();
 									}
 					});
