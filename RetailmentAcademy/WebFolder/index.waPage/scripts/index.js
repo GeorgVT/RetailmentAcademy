@@ -347,9 +347,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		//Let's load selected WebComponent for the first time since page load
 		if (typeof (this.timeTabLoaded[strSelectedTabId]) === 'undefined') {
 
-			$$('tabComponent' + strSelectedTabId).loadComponent({
-			//!!WAF.loadComponent( {
-			//!!			id: 'tabComponent' + strSelectedTabId,
+			//!!$$('tabComponent' + strSelectedTabId).loadComponent({
+			WAF.loadComponent( {
+						id: 'tabComponent' + strSelectedTabId,
+						path: '' + strSelectedTabId + '.waComponent',
 						//?? userData: { strSelectedTabId: "" + strSelectedTabId },
 						onSuccess: function mainTabView_onComponentLoaded() {
 										var dateD = new Date();
