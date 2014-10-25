@@ -7,7 +7,7 @@ function constructor (id) {
 
 	// @region beginComponentDeclaration// @startlock
 	var $comp = this;
-	this.name = 'KlassifikatorDinamicheskiy';
+	this.name = 'DinamicheskiyKlassifikator';
 	// @endregion// @endlock
 
 	this.load = function (data) {// @lock
