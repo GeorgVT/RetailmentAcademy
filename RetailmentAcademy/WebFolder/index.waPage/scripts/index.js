@@ -9,6 +9,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region namespaceDeclaration// @startlock
+	var tabItemZakazy = {};	// @menuItem
+	var tabItemBudgety = {};	// @menuItem
+	var tabItemRaspredelenieBudgeta = {};	// @menuItem
+	var tabItemPlanFact = {};	// @menuItem
 	var sezonEvent = {};	// @dataSource
 	var menuItemDinamicheskiyKlassifikator = {};	// @menuItem
 	var tabItemDinamicheskiyKlassifikator = {};	// @menuItem
@@ -34,13 +38,40 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 // eventHandlers// @lock
 
+	tabItemZakazy.click = function tabItemZakazy_click (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged(
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
+									);
+	};// @lock
+
+	tabItemBudgety.click = function tabItemBudgety_click (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged(
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
+									);
+	};// @lock
+
+	tabItemRaspredelenieBudgeta.click = function tabItemRaspredelenieBudgeta_click (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged(
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
+									);
+	};// @lock
+
+	tabItemPlanFact.click = function tabItemPlanFact_click (event)// @startlock
+	{// @endlock
+		$$('mainTabView').onTabChanged(
+										$$('tabMenuBar').stripChildIDsPrefixes( this.id )
+									);
+	};// @lock
+
 	sezonEvent.onCurrentElementChange = function sezonEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
 		var objCurrentSezon = this.getCurrentElement();
 		if (objCurrentSezon !== null) {
 			if (! objCurrentSezon.isNew()) 
 					document.title = "" + objCurrentSezon.Name.value + strStaticTitle;
-			console.log(objCurrentSezon);
 		}
 	};// @lock
 
@@ -369,6 +400,10 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion
 
 // @region eventManager// @startlock
+	WAF.addListener("tabItemZakazy", "click", tabItemZakazy.click, "WAF");
+	WAF.addListener("tabItemBudgety", "click", tabItemBudgety.click, "WAF");
+	WAF.addListener("tabItemRaspredelenieBudgeta", "click", tabItemRaspredelenieBudgeta.click, "WAF");
+	WAF.addListener("tabItemPlanFact", "click", tabItemPlanFact.click, "WAF");
 	WAF.addListener("sezon", "onCurrentElementChange", sezonEvent.onCurrentElementChange, "WAF");
 	WAF.addListener("menuItemDinamicheskiyKlassifikator", "click", menuItemDinamicheskiyKlassifikator.click, "WAF");
 	WAF.addListener("tabItemDinamicheskiyKlassifikator", "click", tabItemDinamicheskiyKlassifikator.click, "WAF");

@@ -3,6 +3,46 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#richText19 {
+	 z-index: 1;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText18 {
+	 z-index: 1;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText17 {
+	 z-index: 1;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#richText12 {
+	 z-index: 1;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
 #richText11 {
 	 z-index: 1;
 	 height: 23px;
@@ -16,6 +56,7 @@
 #richText7 {
 	 z-index: 1;
 	 width: 328px;
+	 height: 16px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -476,6 +517,134 @@
 }
 
 #tabComponentDinamicheskiyKlassifikator {
+	 z-index: 6;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabItemPlanFact {
+	 z-index: 3;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabContainerPlanFact {
+	 z-index: 4;
+     right: 0px;
+	 top: 23px;
+	 bottom: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabComponentPlanFact {
+	 z-index: 6;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabItemRaspredelenieBudgeta {
+	 z-index: 3;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabContainerRaspredelenieBudgeta {
+	 z-index: 6;
+     right: 0px;
+	 top: 23px;
+	 bottom: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabComponentRaspredelenieBudgeta {
+	 z-index: 6;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabItemBudgety {
+	 z-index: 3;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabItemZakazy {
+	 z-index: 3;
+	 height: 23px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabContainerZakazy {
+	 z-index: 8;
+     right: 0px;
+	 top: 23px;
+	 bottom: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabComponentZakazy {
+	 z-index: 6;
+	 top: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabContainerBudgety {
+	 z-index: 7;
+     right: 0px;
+	 top: 23px;
+	 bottom: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#tabComponentBudgety {
 	 z-index: 6;
 	 top: 0px;
 	 bottom: 0px;
