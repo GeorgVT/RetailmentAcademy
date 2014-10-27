@@ -8,10 +8,43 @@
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
-	 right: 0px;
+	 right: 440px;
 	
 	 position: absolute;
 	 text-align: center;
+	 
+}
+
+#{id}contFilter {
+	 z-index: 2;
+	 height: 40px;
+	 top: 20px;
+	 left: 0px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}contTorgovayaMarka {
+	 z-index: 3;
+	 width: 50%;
+	 height: 38px;
+	 top: 0px;
+	 left: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}contMagazin {
+	 z-index: 3;
+	 width: 50%;
+	 height: 38px;
+	 top: 0px;
+	 right: 0px;
+	
+	 position: absolute;
 	 
 }
 
