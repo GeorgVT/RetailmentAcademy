@@ -3,12 +3,54 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
+#{id}label3 {
+	 z-index: 4;
+	 width: 26px;
+	 height: 13px;
+	 bottom: 29px;
+	 left: 10px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}combobox2 {
+	 z-index: 4;
+	 width: 164px;
+	 height: 24px;
+	 top: 0px;
+	 left: 0px;
+	
+	 
+}
+
+#{id}label2 {
+	 z-index: 4;
+	 width: 29px;
+	 height: 13px;
+	 top: 5px;
+	 left: -34px;
+	
+	 
+}
+
+#{id}label1 {
+	 z-index: 4;
+	 width: 47px;
+	 height: 13px;
+	 bottom: 29px;
+	 left: 5px;
+	
+	 position: absolute;
+	 
+}
+
 #{id}titleText {
 	 z-index: 1;
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
-	 right: 440px;
+	 right: 0px;
 	
 	 position: absolute;
 	 text-align: center;
@@ -17,7 +59,7 @@
 
 #{id}contFilter {
 	 z-index: 2;
-	 height: 40px;
+	 height: 50px;
 	 top: 20px;
 	 left: 0px;
 	 right: 0px;
@@ -29,7 +71,7 @@
 #{id}contTorgovayaMarka {
 	 z-index: 3;
 	 width: 50%;
-	 height: 38px;
+	 height: 50px;
 	 top: 0px;
 	 left: 0px;
 	
@@ -40,9 +82,31 @@
 #{id}contMagazin {
 	 z-index: 3;
 	 width: 50%;
-	 height: 38px;
+	 height: 50px;
 	 top: 0px;
 	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}comboTorgovayaMarka {
+	 z-index: 4;
+	 width: 95%;
+	 height: 20px;
+	 bottom: 5px;
+	 left: 10px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}comboMagazin {
+	 z-index: 4;
+	 width: 95%;
+	 height: 20px;
+	 bottom: 5px;
+	 right: 10px;
 	
 	 position: absolute;
 	 
