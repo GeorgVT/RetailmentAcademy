@@ -10,16 +10,37 @@ function constructor (id) {
 	this.name = 'Budgety';
 	// @endregion// @endlock
 
+	var strStaticTitle = "";
+
 	this.load = function (data) {// @lock
 
 	// @region namespaceDeclaration// @startlock
+	var sezonEvent = {};	// @dataSource
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
 
-	// @region eventManager// @startlock
-	// @endregion// @endlock
+	sezonEvent.onCurrentElementChange = function sezonEvent_onCurrentElementChange (event)// @startlock
+	{// @endlock
+		var objCurrentSezon = this.getCurrentElement();
+		if (objCurrentSezon !== null) {
+			if (! objCurrentSezon.isNew())
+					$$(getHtmlId('titleText')).setValue("" 
+						+ strStaticTitle 
+						+ '"' + objCurrentSezon.Name.value + '"');
+		}
+	};// @lock
 
+	// @region eventManager// @startlock
+	WAF.addListener("sezon", "onCurrentElementChange", sezonEvent.onCurrentElementChange, "WAF");
+	// @endregion// @endlock
+	
+		strStaticTitle = "" + $$(getHtmlId('titleText')).getValue() + ": ";
+		var objCurrentSezon = sources.sezon.getCurrentElement();
+		if (objCurrentSezon !== null)
+				$$(getHtmlId('titleText')).setValue("" 
+					+ strStaticTitle 
+					+ '"' + objCurrentSezon.Name.value + '"');
 	};// @lock
 
 

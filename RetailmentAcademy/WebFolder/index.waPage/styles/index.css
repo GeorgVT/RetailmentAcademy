@@ -118,10 +118,12 @@
 #richText16 {
 	 z-index: 1;
 	 height: 18px;
+     width: 100%;
 	 top: 0px;
 	 left: 0px;
 	
 	 position: absolute;
+     text-align: center;
 	 
 }
 
@@ -188,10 +190,12 @@
 #richText15 {
 	 z-index: 1;
 	 height: 18px;
+     width: 100%;
 	 top: 0px;
 	 left: 0px;
 	
 	 position: absolute;
+     text-align: center;
 	 
 }
 
@@ -258,10 +262,12 @@
 #richText14 {
 	 z-index: 1;
 	 height: 18px;
+     width: 100%;
 	 top: 0px;
 	 left: 0px;
 	
 	 position: absolute;
+     text-align: center;
 	 
 }
 
@@ -328,10 +334,12 @@
 #richText13 {
 	 z-index: 1;
 	 height: 18px;
+     width: 100%;
 	 top: 0px;
 	 left: 0px;
 	
 	 position: absolute;
+     text-align: center;
 	 
 }
 

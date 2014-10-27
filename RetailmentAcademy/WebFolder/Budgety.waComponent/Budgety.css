@@ -3,14 +3,15 @@
 	Changes to this CSS file might be lost when it is regenerated.
 */
 
-#{id}richText1 {
+#{id}titleText {
 	 z-index: 1;
-	 width: 300px;
-	 height: 22px;
-	 top: 20px;
-	 left: 21px;
+	 height: 20px;
+	 top: 0px;
+	 left: 0px;
+	 right: 0px;
 	
 	 position: absolute;
+	 text-align: center;
 	 
 }
 
