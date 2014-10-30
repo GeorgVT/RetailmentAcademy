@@ -14,17 +14,6 @@
 	 
 }
 
-#{id}label3 {
-	 z-index: 4;
-	 width: 26px;
-	 height: 13px;
-	 bottom: 29px;
-	 left: 10px;
-	
-	 position: absolute;
-	 
-}
-
 #{id}button4 {
 	 z-index: 4;
 	 width: 20px;
@@ -69,21 +58,10 @@
 	 
 }
 
-#{id}label1 {
-	 z-index: 4;
-	 width: 47px;
-	 height: 13px;
-	 bottom: 29px;
-	 left: 5px;
-	
-	 position: absolute;
-	 
-}
-
 #{id}richText2 {
 	 z-index: 4;
-	 width: 85px;
-	 height: 16px;
+	 width: 44px;
+	 height: 13px;
 	 top: 11px;
 	 left: 30px;
 	
@@ -126,8 +104,8 @@
 
 #{id}richText1 {
 	 z-index: 4;
-	 width: 40px;
-	 height: 16px;
+	 width: 19px;
+	 height: 13px;
 	 top: 11px;
 	 left: 30px;
 	
@@ -171,9 +149,31 @@
 #{id}accordion1 {
 	 z-index: 3;
 	 height: 335px;
-	 top: 170px;
+	 top: 140px;
 	 left: -2px;
-	 right: 17px;
+	 right: 0px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label3 {
+	 z-index: 4;
+	 width: 47px;
+	 height: 16px;
+	 bottom: 30px;
+	 left: 10px;
+	
+	 position: absolute;
+	 
+}
+
+#{id}label1 {
+	 z-index: 4;
+	 width: 85px;
+	 height: 16px;
+	 bottom: 30px;
+	 left: 10px;
 	
 	 position: absolute;
 	 
@@ -184,7 +184,7 @@
 	 height: 20px;
 	 top: 0px;
 	 left: 0px;
-	 right: 17px;
+	 right: 0px;
 	
 	 position: absolute;
 	 text-align: center;
@@ -215,7 +215,7 @@
 
 #{id}contMagazin {
 	 z-index: 3;
-	 width: 50%;
+	 width: 256px;
 	 height: 50px;
 	 top: 0px;
 	 right: 0px;
@@ -251,7 +251,7 @@
 	 height: 35px;
 	 top: 80px;
 	 left: 0px;
-	 right: 17px;
+	 right: 0px;
 	
 	 position: absolute;
 	 

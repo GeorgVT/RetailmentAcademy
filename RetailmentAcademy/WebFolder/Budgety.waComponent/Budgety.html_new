@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html><section data-group="[['accordion1','richText1','container2','container3','container1','richText2','container5','container6','container4'],['fileUpload','button1','button2','button3','button4','container10']]">
+    <meta name="generator" content="Wakanda GUIDesigner"/>
+    <meta name="WAF.catalog" content="Magazin,TorgovayaMarka,Sezon"/>
+    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Magazin" data-scope="local" data-lib="WAF" data-initialOrderBy="Name asc" data-id="{id}magazin" data-dataType="string" data-autoLoad="true" content="magazin"/>
+    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="TorgovayaMarka" data-scope="local" data-lib="WAF" data-initialOrderBy="Name asc" data-id="{id}torgovayaMarka" data-dataType="string" data-autoLoad="true" content="torgovayaMarka"/>
+    <meta name="WAF.config.datasources" data-type="dataSource" data-source-type="dataClass" data-source="Sezon" data-scope="global" data-lib="WAF" data-initialOrderBy="NachaloProdagh desc" data-id="sezon" data-dataType="string" data-autoLoad="true" content="sezon"/>		<div id="{id}titleText" data-type="richText" data-target="_blank" data-plainText="true" data-overflow="Hidden" data-lib="WAF" data-label-position="left" data-label="" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" data-autoWidth="false" class="waf-widget waf-richText">Бюджеты закупок сезона</div>
+			<div id="{id}contFilter" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="true" data-constraint-left="true" class="waf-widget waf-container waf-container-level-0 waf-level-0">
+	 	 	<div id="{id}contTorgovayaMarka" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="false" class="waf-widget waf-container waf-split-container waf-container-level-1 waf-level-1">
+	 	 	 	<div id="{id}comboTorgovayaMarka" data-type="combobox" data-limit="20" data-lib="WAF" data-label-position="top" data-label="Торговая марка:" data-editable="true" data-constraint-top="false" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="true" data-autoDispatch="true" class="waf-widget waf-combobox"><select></select></div>
+ 	 	 		<label id="{id}label1" for="{id}comboTorgovayaMarka" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="false" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-label waf-label-combobox">Торговая марка:</label>
+ 	 	 	</div>
+ 	 		<div id="{id}contMagazin" data-type="container" data-lib="WAF" data-label-position="top" data-label="" data-constraint-top="true" data-constraint-right="true" data-constraint-left="false" data-constraint-bottom="false" class="waf-widget waf-container waf-split-container waf-container-level-1 waf-level-1">
+ 	 	 		<div id="{id}comboMagazin" data-type="combobox" data-limit="20" data-lib="WAF" data-label-position="top" data-label="Магазин:" data-editable="true" data-constraint-top="false" data-constraint-right="true" data-constraint-left="false" data-constraint-bottom="true" data-autoDispatch="true" class="waf-widget waf-combobox"><select></select></div>
+ 	 	 		<label id="{id}label3" for="{id}comboMagazin" data-valign="middle" data-type="label" data-margin="5" data-lib="WAF" data-constraint-top="false" data-constraint-right="false" data-constraint-left="true" data-constraint-bottom="true" class="waf-widget waf-label waf-label-combobox">Магазин:</label>
+ 	 	 	</div>
+ 	 	</div>
+	
+	
+		<div id="{id}accordion1" data-type="accordion" data-lib="WAF" class="waf-widget waf-accordion" data-expand-several="true" data-duration="400" data-header-height="40" data-constraint-left="true" data-constraint-top="true" data-context="['disallowDropAndBind']" data-linked-tag="{id}container1,{id}container4" data-constraint-right="true">
+	 	 	<div id="{id}container1" data-type="container" data-lib="WAF" class="waf-widget waf-container waf-container-level-0 waf-level-0 accordion-section waf-state-collapsed" data-label="" data-label-position="top" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-context="['protected','allowRemove']">
+	 	 	 	<div id="{id}container2" data-type="container" data-lib="WAF" class="waf-widget waf-container accordion-header waf-accordion-header waf-state-expanded waf-container-level-1 waf-level-1" data-label="" data-label-position="top" data-context="['protected']" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">
+	 	 	 	 	<div id="{id}richText1" data-type="richText" data-lib="WAF" class="waf-widget waf-richText waf-accordion-title waf-state-expanded" data-autoWidth="true" data-label="" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">Бюджет</div>
+ 	 	 	 	</div>
+ 	 	 		<div id="{id}container3" data-type="container" data-lib="WAF" class="waf-widget waf-container waf-container-level-1 waf-level-1 accordion-content waf-accordion-content waf-state-expanded waf-state-collapsed" data-label="" data-label-position="top" data-context="['protected','allowDrop']" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false"></div>
+ 	 	 	</div>
+ 	 		<div id="{id}container4" data-type="container" data-lib="WAF" class="waf-widget waf-container waf-container-level-0 waf-level-0 accordion-section waf-state-collapsed" data-label="" data-label-position="top" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-context="['protected','allowRemove']">
+	 	 	 	<div id="{id}container5" data-type="container" data-lib="WAF" class="waf-widget waf-container waf-container-level-1 waf-level-1 accordion-header waf-accordion-header waf-state-collapsed" data-label="" data-label-position="top" data-context="['protected']" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">
+	 	 	 	 	<div id="{id}richText2" data-type="richText" data-lib="WAF" class="waf-widget waf-richText waf-accordion-title waf-state-collapsed" data-autoWidth="true" data-label="" data-label-position="left" data-target="_blank" data-overflow="Hidden" data-plainText="true" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false">Строки бюджета</div>
+ 	 	 	 	</div>
+ 	 	 		<div id="{id}container6" data-type="container" data-lib="WAF" class="waf-widget waf-container waf-container-level-1 waf-level-1 accordion-content waf-accordion-content waf-state-collapsed" data-label="" data-label-position="top" data-context="['protected','allowDrop']" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false"></div>
+ 	 	 	</div>
+ 	 		</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<div id="{id}fileUpload" data-type="fileUpload" data-lib="WAF" data-label="" data-label-position="left" data-action="false" data-text="Укажите Excel-файл бюджета для загрузки" data-maxfilesize="unlimited" data-maxfilesize-unity="KB" data-maxfiles="1" data-folder="budgets" data-autoUpload="false" data-userAction="Replace" data-notification="true" data-listStyle="menu" class="waf-widget waf-fileUpload" data-constraint-left="true" data-constraint-top="true" data-linked-tag="{id}button1,{id}button2,{id}button3,{id}button4,{id}container10" data-constraint-right="true">
+	 	 	<button id="{id}button1" data-type="button" data-lib="WAF" class="waf-widget waf-button waf-fileUpload-btnBrowse" data-action="simple" data-target="_blank" data-context="['protected']" data-constraint-left="false" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="true" data-text="..."></button>
+ 	 		<button id="{id}button2" data-type="button" data-lib="WAF" class="waf-widget waf-button waf-fileUpload-btnUpload" data-action="simple" data-target="_blank" data-context="['protected']" data-constraint-left="false" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="true" data-text=" "></button>
+ 	 		<button id="{id}button3" data-type="button" data-lib="WAF" class="waf-widget waf-button waf-fileUpload-btnCardinal" data-action="simple" data-target="_blank" data-context="['protected']" data-constraint-left="false" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="true" data-text="n"></button>
+ 	 		<button id="{id}button4" data-type="button" data-lib="WAF" class="waf-widget waf-button waf-fileUpload-btnDelete" data-action="simple" data-target="_blank" data-context="['protected']" data-constraint-left="false" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="true" data-text="x"></button>
+ 	 		<div id="{id}container10" data-type="container" data-lib="WAF" class="waf-widget waf-container waf-container-level-0 waf-level-0 waf-fileUpload-fileList waf-fileUpload-fileList-menu" data-label="" data-label-position="top" data-context="['protected']" data-constraint-left="true" data-constraint-top="true" data-constraint-bottom="false" data-constraint-right="false" data-linked-tag="{id}fileUpload"></div>
+ 	 	</div>
+		
+	
+	
+	
+	
+	</section>
