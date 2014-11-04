@@ -1,1 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><permissions></permissions>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<allow type="service" action="upload" resource="upload" groupName="Admin"/>
+</permissions>

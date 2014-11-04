@@ -92,7 +92,7 @@
 }
 
 #{id}accordion1 {
-	 z-index: 6;
+	 z-index: 5;
 	 top: 120px;
 	 bottom: 0px;
 	 left: 0px;
@@ -247,7 +247,7 @@
 }
 
 #{id}fileUpload {
-	 z-index: 5;
+	 z-index: 6;
 	 height: 35px;
 	 top: 80px;
 	 left: 0px;

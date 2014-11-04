@@ -15,10 +15,16 @@ function constructor (id) {
 	this.load = function (data) {// @lock
 
 	// @region namespaceDeclaration// @startlock
+	var fileUpload = {};	// @fileUpload
 	var sezonEvent = {};	// @dataSource
 	// @endregion// @endlock
 
 	// eventHandlers// @lock
+
+	fileUpload.filesUploaded = function fileUpload_filesUploaded (event)// @startlock
+	{// @endlock
+		//
+	};// @lock
 
 	sezonEvent.onCurrentElementChange = function sezonEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
@@ -32,6 +38,7 @@ function constructor (id) {
 	};// @lock
 
 	// @region eventManager// @startlock
+	WAF.addListener(this.id + "_fileUpload", "filesUploaded", fileUpload.filesUploaded, "WAF");
 	WAF.addListener("sezon", "onCurrentElementChange", sezonEvent.onCurrentElementChange, "WAF");
 	// @endregion// @endlock
 	
